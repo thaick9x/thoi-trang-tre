@@ -27,7 +27,7 @@
 	width: 100%;
 }
 #tranglienhe {
-	margin: auto;
+	
 	width: 730px;
 }
 
@@ -38,10 +38,11 @@
 	<div id="lienhe">
 		<div id="namelienhe">Liên hệ</div>
     	<div id="showlienhe">
+		<textarea rows="20" cols="95" name="data" readonly>
 			<?PHP
 				echo file_get_contents('lienhe.txt');
 			?>
-       
+		</textarea>
         </div>
 	</div>
 

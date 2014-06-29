@@ -27,9 +27,9 @@
     <a href="/thoi-trang-tre/admin/sanpham/sanpham.php"><p>Sản Phẩm</p></a>
     <a href="/thoi-trang-tre/admin/user/users.php"><p>Users</p></a>
     </td>
-    <td width="227" valign="top"><a href="#"><p>Trang giới thiệu</p></a>
+    <td width="227" valign="top"><a href="/thoi-trang-tre/admin/chinhsua/?link=gioithieu"><p>Trang giới thiệu</p></a>
       <a href="#"><p>Trang tuyển dụng</p></a>
-      <a href="#"><p>Trang liên hệ</p></a>
+      <a href="/thoi-trang-tre/admin/chinhsua/?link=lienhe"><p>Trang liên hệ</p></a>
     </td>
     <td width="227" valign="top"><a href="/thoi-trang-tre/admin/thongkehangdahet.php"><p>Hàng đã hết trong kho</p></a>
     <a href="/thoi-trang-tre/admin/doanhthuthang.php"><p>Doanh thu theo tháng</p></a>
