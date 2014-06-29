@@ -23,18 +23,18 @@
   </tr>
   <tr>
     <td width="228"><a href="chungloaisanpham/chungloai.php"><p>Chủng loại Sản Phẩm</p></a>
-    <a href="http://localhost/thoitrangtre/admin/loaisanpham/loaisanpham.php"><p>Loại Sản Phẩm</p></a>
-    <a href="http://localhost/thoitrangtre/admin/sanpham/sanpham.php"><p>Sản Phẩm</p></a>
-    <a href="http://localhost/thoitrangtre/admin/user/users.php"><p>Users</p></a>
+    <a href="http://localhost/thoi-trang-tre/admin/loaisanpham/loaisanpham.php"><p>Loại Sản Phẩm</p></a>
+    <a href="http://localhost/thoi-trang-tre/admin/sanpham/sanpham.php"><p>Sản Phẩm</p></a>
+    <a href="http://localhost/thoi-trang-tre/admin/user/users.php"><p>Users</p></a>
     </td>
     <td width="227" valign="top"><a href="#"><p>Trang giới thiệu</p></a>
       <a href="#"><p>Trang tuyển dụng</p></a>
       <a href="#"><p>Trang liên hệ</p></a>
     </td>
-    <td width="227" valign="top"><a href="http://localhost/thoitrangtre/admin/thongkehangdahet.php"><p>Hàng đã hết trong kho</p></a>
-    <a href="http://localhost/thoitrangtre/admin/doanhthuthang.php"><p>Doanh thu theo tháng</p></a>
-    <a href="#"><p>Doanh thu theo năm</p></a>
-    <a href="http://localhost/thoitrangtre/admin/thongkehoadon.php"><p>Thống kê hóa đơn</p></a>
+    <td width="227" valign="top"><a href="http://localhost/thoi-trang-tre/admin/thongkehangdahet.php"><p>Hàng đã hết trong kho</p></a>
+    <a href="http://localhost/thoi-trang-tre/admin/doanhthuthang.php"><p>Doanh thu theo tháng</p></a>
+    <a href="http://localhost/thoi-trang-tre/admin/doanhthunam.php"><p>Doanh thu theo năm</p></a>
+    <a href="http://localhost/thoi-trang-tre/admin/thongkehoadon.php"><p>Thống kê hóa đơn</p></a>
     </td>
   </tr>
 </table>

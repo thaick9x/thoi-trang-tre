@@ -12,12 +12,12 @@ if (isset($_GET['idCL']))
 {
 	$idCL=$_GET['idCL'];
 }
-require_once '../connect.php';
+require_once '../../connect.php';
 $sl="select * from chungloaisanpham where idCL=".$idCL."";
 $qr=mysql_query($sl);
 $row=mysql_fetch_array($qr);
 ?>
-<form id="form1" name="form1" method="post" action="index.php?link=xulysuachungloai">
+<form id="form1" name="form1" method="post" action="xuly_sua.php">
 <input type="hidden" name="idCL" id="idCL" value="<?php echo $row['idCL']; ?>" />
   <table width="500" border="1" cellspacing="0" cellpadding="0" align="center">
     <tr>

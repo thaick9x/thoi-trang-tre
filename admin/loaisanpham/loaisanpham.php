@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 <title>Untitled Document</title>
 
 </head>
@@ -17,7 +17,7 @@
     <td align="center"><a href="index.php?link=themloai">Thêm</a></td>
   </tr>
   <?php
-  require_once '../connect.php';
+  require_once '../../connect.php';
   $sl="select * from loaisanpham";
   $qr=mysql_query($sl);
   $tsdong=mysql_num_rows($qr);
@@ -49,7 +49,7 @@
     	?></td>
     <td><?php echo $row2['TenLoai']; ?></td>
     <td align="center"><?php if ($row2['AnHien']==0) echo "Ẩn"; if ($row2['AnHien']==1) echo "Hiện"; ?></td>
-    <td align="center"><a href="index.php?link=xulyxoaloai&idLoai=<?php echo $row2['idLoai']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="index.php?link=sualoai&idLoai=<?php echo $row2['idLoai']; ?>">Sửa</a></td>
+    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/loaisanpham/xuly_xoa.php?idLoai=<?php echo $row2['idLoai']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="http://localhost/thoi-trang-tre/admin/loaisanpham/sualoai.php?idLoai=<?php echo $row2['idLoai']; ?>">Sửa</a></td>
   </tr>
   <?php
   }

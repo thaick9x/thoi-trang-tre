@@ -15,17 +15,23 @@
 </tr>
 <?php
 require_once '../connect.php';
-$sl="select SUM(gia),ThangXuatHD from chitiethoadon where ThangXuatHD = '3' or ThangXuatHD = '1'";
-$qr=mysql_query($sl);
-while ($row=mysql_fetch_array($qr))
+for($i=1;$i<13;$i++)
 {
-?>
-<tr>
-	<td align="center"><?php echo $row['ThangXuatHD']; ?></td>
-	<td align="center"><?php echo $row['SUM(gia)']; ?></td>
-    <td align="center"><a href="index.php?link=suasanpham">Thêm</a></td>
-</tr>
-<?php
+	$sl="select SUM(gia),ThangXuatHD from chitiethoadon where ThangXuatHD = ".$i."";
+	$qr=mysql_query($sl);
+	while ($row=mysql_fetch_array($qr))
+	{
+		if($row[0]>0)
+		{
+			?>
+			<tr>
+				<td align="center"><?php echo $row['ThangXuatHD']; ?></td>
+				<td align="center"><?php echo $row['SUM(gia)']; ?></td>
+				<td align="center"><a href="index.php?link=suasanpham">Thêm</a></td>
+			</tr>
+			<?php
+		}
+	}
 }
 ?>
 </table>

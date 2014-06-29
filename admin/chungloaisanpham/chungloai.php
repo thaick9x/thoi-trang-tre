@@ -17,7 +17,7 @@
   <?php
     //put your code here
     // constructor
-    require_once '../connect.php';
+    require_once '../../connect.php';
     
   $sl="select * from chungloaisanpham";
   $qr=mysql_query($sl);
@@ -33,24 +33,11 @@
 		<td align="center"><?php echo $cl['idCL']; ?></td>
 		<td><?php echo $cl['TenCL']; ?></td>
 		<td align="center"><?php if ($cl['AnHien']==0) echo "Ẩn"; if ($cl['AnHien']==1) echo "Hiện"; ?></td>
-		<td align="center"><a href="http://localhost/thoitrangtre/admin/chungloaisanpham/suachungloai.php" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="index.php?link=suachungloai&idCL=<?php echo $cl['idCL']; ?>">Sửa</a></td>
+		<td align="center"><a href="http://localhost/thoi-trang-tre/admin/chungloaisanpham/xuly_xoa.php?idCL=<?php echo $cl['idCL']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="http://localhost/thoi-trang-tre/admin/chungloaisanpham/suachungloai.php?idCL=<?php echo $cl['idCL']; ?>">Sửa</a></td>
 	  </tr>
 	  <?php
 	}
   }
- /* $qr=mysql_query($sl);
-  
-  while ($row=mysql_fetch_array($qr))
-  {
-  ?>
-  <tr>
-    <td align="center"><?php echo $row['idCL']; ?></td>
-    <td><?php echo $row['TenCL']; ?></td>
-    <td align="center"><?php if ($row['AnHien']==0) echo "Ẩn"; if ($row['AnHien']==1) echo "Hiện"; ?></td>
-    <td align="center"><a href="index.php?link=xulyxoachungloai&idCL=<?php echo $row['idCL']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="index.php?link=suachungloai&idCL=<?php echo $row['idCL']; ?>">Sửa</a></td>
-  </tr>
-  <?php
-  }*/
   ?>
 </table>
 </body>

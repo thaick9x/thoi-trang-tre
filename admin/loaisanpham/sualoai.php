@@ -7,6 +7,7 @@
 
 <body>
 <?php
+require_once '../../connect.php';
 if (isset ($_GET['idLoai']))
 $idLoai=$_GET['idLoai'];
 
@@ -15,7 +16,7 @@ $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
 {
 ?>
-<form id="form1" name="form1" method="post" action="index.php?link=xulysualoai">
+<form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/loaisanpham/xuly_sua.php">
   <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
     <tr>
       <td width="200">Tên chủng loại sản phẩm:</td>
