@@ -281,7 +281,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   </tr>
   <tr>
     <td align="right" class="mucnho">Ngày sinh:</td>
-    <td><input type="text" name="ngaysinh" id="ngaysinh" /></td>
+    <td><input type="date" name="ngaysinh" id="ngaysinh" /></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -307,7 +307,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   </tr>
   <tr>
     <td align="right" class="mucnho">Số điện thoại:</td>
-    <td><input type="text" name="sodienthoai" id="sodienthoai" onblur="kiemtradienthoai(this.value)" /><input type="hidden" id="an6" name="an6" />
+    <td><input type="tel" name="sodienthoai" id="sodienthoai" onblur="kiemtradienthoai(this.value)" /><input type="hidden" id="an6" name="an6" />
     *</td>
     <td><div id="ketquadienthoai"></div></td>
   </tr>
@@ -329,7 +329,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   </tr>
   <tr>
     <td align="right" class="mucnho">Ngày cấp:</td>
-    <td><input type="text" name="ngaycapcmnd" id="ngaycapcmnd" /></td>
+    <td><input type="tel" name="ngaycapcmnd" id="ngaycapcmnd" /></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
