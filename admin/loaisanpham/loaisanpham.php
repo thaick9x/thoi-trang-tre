@@ -17,7 +17,7 @@
     <td align="center"><a href="index.php?link=themloai">Thêm</a></td>
   </tr>
   <?php
-  require_once 'connect.php';
+  require_once '../connect.php';
   $sl="select * from loaisanpham";
   $qr=mysql_query($sl);
   $tsdong=mysql_num_rows($qr);

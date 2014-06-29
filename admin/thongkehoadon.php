@@ -21,7 +21,7 @@
     <td align="center"><p style="color:#F00">In hóa đơn</p></td>
 </tr>
 <?php
-require_once 'connect.php';
+require_once '../connect.php';
 $sl="select * from hoadon";
 $qr=mysql_query($sl);
 while ($row=mysql_fetch_array($qr))

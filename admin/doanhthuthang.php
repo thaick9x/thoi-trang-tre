@@ -14,7 +14,7 @@
     <td align="center"><p style="color:#F00">Thêm</p></td>
 </tr>
 <?php
-require_once 'connect.php';
+require_once '../connect.php';
 $sl="select SUM(gia),ThangXuatHD from chitiethoadon where ThangXuatHD = '3' or ThangXuatHD = '1'";
 $qr=mysql_query($sl);
 while ($row=mysql_fetch_array($qr))

@@ -14,7 +14,7 @@
     <td align="center"><p style="color:#F00">Thêm</p></td>
 </tr>
 <?php
-require_once 'connect.php';
+require_once '../connect.php';
 $sl="select * from sanpham where SoLuongTonKho=0";
 $qr=mysql_query($sl);
 while ($row=mysql_fetch_array($qr))

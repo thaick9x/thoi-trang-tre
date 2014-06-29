@@ -12,7 +12,7 @@ if (isset($_GET['idCL']))
 {
 	$idCL=$_GET['idCL'];
 }
-require_once 'connect.php';
+require_once '../connect.php';
 $sl="select * from chungloaisanpham where idCL=".$idCL."";
 $qr=mysql_query($sl);
 $row=mysql_fetch_array($qr);

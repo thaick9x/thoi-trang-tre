@@ -17,7 +17,7 @@
   <?php
     //put your code here
     // constructor
-    require_once 'connect.php';
+    require_once '../connect.php';
     
   $sl="select * from chungloaisanpham";
   $qr=mysql_query($sl);
