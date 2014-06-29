@@ -26,7 +26,7 @@ float: right;
 }
 
 #main_nav {
-font-size: 1.4em;
+font-size: 1.2em;
 background: #b4e887;
 padding : 10px;
 height: 25px;
@@ -39,7 +39,7 @@ display: inline;
 }
 
 #main_nav li a {
-padding: 15px;
+padding: 6px;
 text-decoration: none;
 color: #191919;
 font-weight: bold;
