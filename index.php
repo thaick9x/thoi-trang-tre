@@ -220,7 +220,7 @@ body {
 					$rowquyen=mysql_fetch_array($qrquyen);
 					if ($rowquyen['PhanQuyen']==1)
 						{?>
-                vào trang  <a href="index.php?link=trangchuquantri">Quản trị</a>
+                vào trang  <a href="http://localhost//thoi-trang-tre/admin/index.php">Quản trị</a>
           <?php
 						}
 				}
@@ -273,7 +273,7 @@ body {
 			case "dangky": include ("dangky.php"); break;
 			case "saidangnhap": include ("dangnhapsai.php");break;
 			case "timkiem": include ("timkiem.php");break;
-			case "trangchuquantri": include ("admin/index_quantri.php");break;
+			case "trangchuquantri": include ("admin/index.php");break;
 			case "quanlychungloai": include ("admin/chungloaisanpham/chungloai.php");break;
 			case "quanlyloai": include ("admin/loaisanpham/loaisanpham.php");break;
 			case "quanlysanpham": include ("admin/sanpham/sanpham.php");break;

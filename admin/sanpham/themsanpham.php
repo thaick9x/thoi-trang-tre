@@ -10,12 +10,13 @@
 
 <body>
 <p align="center" style="color:#06F; font-size:24px;"><b>Trang Quản Trị Thêm Sản Phẩm</b></p>
-<form action="index.php?link=xulythemdochoi" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<form action="http://localhost/thoi-trang-tre/admin/sanpham/xuly_them.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
   <table width="800" border="1" cellspacing="0" cellpadding="0" align="center">
     <tr>
       <td width="210">Tên chủng loại Sản Phẩm:</td>
       <td><select name="chungloai" id="chungloai">
       <?php
+	  require_once '../../connect.php';
 	  $slcl="select * from chungloaisanpham";
 	  $qrcl=mysql_query($slcl);
 	  while ($rowcl=mysql_fetch_array($qrcl))

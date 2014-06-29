@@ -12,7 +12,7 @@
     <td align="center">ID chủng loại</td>
     <td align="center">Tên chủng loại sản phẩm</td>
     <td align="center">Ẩn hiện</td>
-    <td align="center"><a href="index.php?link=themchungloai">Thêm</a></td>
+    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/chungloaisanpham/themchungloai.php">Thêm</a></td>
   </tr>
   <?php
     //put your code here

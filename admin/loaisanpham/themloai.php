@@ -6,13 +6,14 @@
 </head>
 
 <body>
-<p align="center" style="color:#06F; font-size:24px;"><b>Trang Quản Trị Thêm Loại Đồ Chơi</b></p>
-<form id="form1" name="form1" method="post" action="index.php?link=xulythemloai">
+<p align="center" style="color:#06F; font-size:24px;"><b>Trang Quản Trị Thêm Loại Sản Phẩm</b></p>
+<form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/loaisanpham/xuly_them.php">
   <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
     <tr>
-      <td>Tên chủng loại đồ chơi:</td>
+      <td>Tên chủng loại Sản Phẩm:</td>
       <td><select name="chungloai" id="chungloai">
       <?php
+	  require_once '../../connect.php';
 	  $slcl="select * from chungloaisanpham";
 	  $qrcl=mysql_query($slcl);
 	  while ($rowcl=mysql_fetch_array($qrcl))
@@ -37,7 +38,7 @@
     </tr>
     <tr>
       <td><input type="submit" name="them" id="them" value="Thêm" /></td>
-      <td><input type="reset" name="huy" id="huy" value="Hủy" /></td>
+      <td><button onclick="goBack()">Hủy</button></td>
     </tr>
   </table>
 

@@ -19,7 +19,7 @@
     <td align="center">Số lượng tồn kho</td>
     <td align="center">Số lượng đã bán</td>
     <td align="center">Ẩn hiện</td>
-    <td align="center"><a href="index.php?link=themsanpham">Thêm</a></td>
+    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/sanpham/themsanpham.php">Thêm</a></td>
   </tr>
   <?php
   require_once 'connect.php';

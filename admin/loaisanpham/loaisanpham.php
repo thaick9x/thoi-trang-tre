@@ -14,14 +14,14 @@
     <td align="center" width="200">Tên chủng loại sản phẩm</td>
     <td align="center" width="200">Tên loại sản phẩm</td>
     <td align="center" width="100">Ẩn hiện</td>
-    <td align="center"><a href="index.php?link=themloai">Thêm</a></td>
+    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/loaisanpham/themloai.php">Thêm</a></td>
   </tr>
   <?php
   require_once '../../connect.php';
   $sl="select * from loaisanpham";
   $qr=mysql_query($sl);
   $tsdong=mysql_num_rows($qr);
-  $sodong=10;
+  $sodong=20;
   $tstrang=ceil($tsdong/$sodong);//Tính được tổng số trang
   //Lấy được số trang
   if (isset($_GET['trang']))
