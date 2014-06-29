@@ -168,7 +168,7 @@ body {
 			<li><a href="index.php">Trang chủ</a></li>
 			<li><a href="index.php?link=gioithieu">Giới Thiệu</a></li>
 			<li><a href="index.php?link=dangky">Đăng Kí</a></li>
-			<li><a href="#">Liên Hệ</a></li>
+			<li><a href="index.php?link=lienhe">Liên Hệ</a></li>
 		</div>
 	</div><!--End #main_nav-->
     <div id="banner">
@@ -269,6 +269,7 @@ body {
 			case "loaisp": include ("sanphamtheoloai.php"); break;
 			case "sanpham": include ("chitietsp.php"); break;
 			case "gioithieu": include ("gioithieu.php"); break;
+			case "lienhe": include ("lienhe.php"); break;
 			case "dangky": include ("dangky.php"); break;
 			case "saidangnhap": include ("dangnhapsai.php");break;
 			case "timkiem": include ("timkiem.php");break;
