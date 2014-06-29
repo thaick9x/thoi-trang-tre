@@ -31,7 +31,7 @@ background: #b4e887;
 heigth: 15px;
 overflow: hidden;
 padding: 10px;
-width: 950px;
+width: 980px;
 }
 
 #main_nav li {
@@ -54,7 +54,7 @@ text-decoration: none;
 }
 #formdangnhap {
 	height: 25px;
-	width: 723px;
+	width: 788px;
 	border: 3px solid #C00;
 	text-align: center;
 	vertical-align: middle;
@@ -63,21 +63,32 @@ text-decoration: none;
 	margin-top: 5px;
 }
 #right {
-	width: 800px;
-	margin-left: 170px;
-	border-radius:15px;}
+	
+	margin-left: 20px;
+	border-radius:15px;
+	float: left;
+}
+#left {
+	
+	margin-left: 0px;
+	
+	float: left;
+}
 #timkiem {
 	height: 80px;
 	width: 800px;
 	background-image: none;
 	background-repeat: no-repeat;
-	margin-left: 240px;
+	margin-left: 20px;
+	float: left;
 }
 #finding {
+	float: left;
+	margin-top: 10px;
 }
 #formtimkiem {
 	height: 25px;
-	width: 723px;
+	width: 788px;
 	border: 3px solid #C00;
 	margin-bottom: 35px;
 	text-align: center;
@@ -99,6 +110,8 @@ text-decoration: none;
 }
 #content {
 	width: 1000px;
+	float: left;
+	margin-top: 10px;
 }
 #giohang {
 	height: 70px;
@@ -122,9 +135,14 @@ text-decoration: none;
 	border: 3px solid #693;
 	margin-top: 10px;
 	border-radius: 15px;
+	float: left;
 }
 
---!>
+body {
+	margin-left: 170px;
+}
+-->
+
 </style>
 
 <script src="jquery/jquery-1.8.0.js"></script>
@@ -149,7 +167,7 @@ text-decoration: none;
 		</ul>
 	</div><!--End #main_nav-->
     <div id="banner">
-       <img src="images_index/banner.jpg" alt="banner"/>
+       <img src="images_index/banner.jpg" alt="banner" width="1000px" />
      </div><!--End #banner-->
     <div id="finding">
    	  <div id="datetime">
