@@ -11,7 +11,6 @@
 <tr>
 	<td align="center"><p style="color:#F00">Tên Sản Phẩm đã hết hàng</p></td>
     <td align="center"><p style="color:#F00">Hình ảnh Sản Phẩm đã hết hàng</p></td>
-    <td align="center"><p style="color:#F00">Thêm</p></td>
 </tr>
 <?php
 require_once '../connect.php';
@@ -21,9 +20,8 @@ while ($row=mysql_fetch_array($qr))
 {
 ?>
 <tr>
-	<td><?php echo $row['TenSP']; ?></td>
+	<td align="center"><?php echo $row['TenSP']; ?></td>
     <td align="center"><img src="images/<?php echo $row['UrlHinh'];?>" width="150" height="150" /></td>
-    <td align="center"><a href="index.php?link=suasanpham">Thêm</a></td>
 </tr>
 <?php
 }

@@ -4,17 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 <title>Untitled Document</title>
 </head>
-<?php
+<?php ob_start();
+if (isset ($_POST['idSP']))
+$idSP=$_POST['idSP'];
 include ("../../connect.php");
-
-if (isset ($_GET['idSP']))
-$idDC=$_GET['idSP'];
-
-$sl="delete from sanpham where idSP=".$idDC."";
+$sl="update sanpham set TenSP='".$_POST['tensanpham']."',MoTa='".$_POST['Mota']."', AnHien='".$_POST['anhien']."' where idSP='".$idSP."'";
+echo $sl;
 if (mysql_query($sl))
-{
 	header ("location:sanpham.php");
-}
 else 
-	echo "Xóa Sản Phẩm thất bại";
+	echo "Sửa loại sản phẩm thất bại";
 ?>

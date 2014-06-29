@@ -66,7 +66,7 @@
     <td align="center"><?php echo $rowdc['SoLuongTonKho']; ?></td>
     <td align="center"><?php echo $rowdc['SoLuongDaBan']; ?></td>
     <td align="center"><?php if ($rowdc['AnHien']==0) echo "Ẩn"; if ($rowdc['AnHien']==1) echo "Hiện"; ?></td>
-    <td align="center"><a href="xuly_xoa.php?idSP=<?php echo $rowdc['idSP']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a><br /><a href="#">Sửa</a></td>
+    <td align="center"><a href="xuly_xoa.php?idSP=<?php echo $rowdc['idSP']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a><br /><a href="suasanpham.php?idSP=<?php echo $rowdc['idSP']; ?>">Sửa</a></td>
   </tr>
   <?php
   }
