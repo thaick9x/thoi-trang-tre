@@ -26,12 +26,12 @@ float: right;
 }
 
 #main_nav {
-font-size: 1.1em;
+font-size: 1.4em;
 background: #b4e887;
-heigth: 15px;
-overflow: hidden;
-padding: 10px;
+padding : 10px;
+height: 25px;
 width: 980px;
+
 }
 
 #main_nav li {
@@ -39,7 +39,7 @@ display: inline;
 }
 
 #main_nav li a {
-padding: 5px;
+padding: 15px;
 text-decoration: none;
 color: #191919;
 font-weight: bold;
@@ -51,6 +51,11 @@ color: white;
 text-decoration: none;
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
+}
+#banner {
+	float: left;
+	margin-top:10px;
+	
 }
 #formdangnhap {
 	height: 25px;
@@ -159,15 +164,15 @@ body {
 		
 	</div><!--End #logo-->
     <div id="main_nav">
-		<ul>
+		<div>
 			<li><a href="index.php">Trang chủ</a></li>
 			<li><a href="#">Giới Thiệu</a></li>
 			<li><a href="index.php?link=dangky">Đăng Kí</a></li>
 			<li><a href="#">Liên Hệ</a></li>
-		</ul>
+		</div>
 	</div><!--End #main_nav-->
     <div id="banner">
-       <img src="images_index/banner.jpg" alt="banner" width="1000px" />
+       <img src="images_index/banner.jpg" alt="banner" width="1000px"  />
      </div><!--End #banner-->
     <div id="finding">
    	  <div id="datetime">
