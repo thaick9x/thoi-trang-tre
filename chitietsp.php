@@ -13,13 +13,12 @@
 	border-top-left-radius: 15px;
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
-	border-top-right-radius: 15px;
-	margin-left: 35px;
+	border-top-right-radius: 15px;	
 }
 #spcungloai {
 	width: 389px;
 	border: 2px solid #690;
-	margin-left: 396px;
+	margin-left:402px;
 	border-radius: 15px;
 }
 #chitietgiohang {
@@ -51,6 +50,7 @@
 	border-bottom-style: solid;
 	border-bottom-color: #C00;
 	text-align: center;
+	
 }
 #showgiohang {
 	width: 100%;
@@ -63,6 +63,11 @@
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
 	border-bottom-color: #690;
+	
+	float: left;	
+	width: 389px;
+	border: 2px;
+	border-radius: 15px;
 }
 
 #namechitietsp {
@@ -74,6 +79,7 @@
 	font-weight: bolder;
 	text-align: center;
 	color: #690;
+	float:left;
 }
 
 #showchitietsp {
@@ -91,19 +97,30 @@
 	width: 100%;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	margin-left: 38px;
+	
+}
+#showspcungloaidc {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
 }
 #spcungcl {
-	float: left;
+	float: left;	
 	width: 389px;
 	border: 2px solid #C00;
-	margin-left: 1px;
 	border-radius: 15px;
 }
 #showspcungloai {
 	width: 100%;
-	text-align: center;
+	text-align: left;
+	float:left;
 }
+#trangsp {
+	margin: auto;
+	width: 730px;
+}
+
 
 
 -->
@@ -161,6 +178,7 @@ function kiemtrasoluong1()
 }
 </script>
 <body>
+<div id="trangsp">
 <div id="chitietsanpham">
 	<div id="namechitietsp">
     
@@ -454,6 +472,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
     <div id="spcungloai">
         	<div id="namespcungloai">Sản phẩm cùng loại</div>
         <div id="showspcungloaidc">
+		<table width="100%" border="0" cellspacing="2" cellpadding="1">
           <?php
 			$sldc3="select * from sanpham where idLoai=".$rowdc['idLoai']." limit 0,10";
 			$qrdc3=mysql_query($sldc3);
@@ -461,7 +480,10 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 			{
 			?>
 		  <tr>
-   			  <td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc3['idSP']; ?>"><img src="images/<?php echo $rowdc3['UrlHinh']; ?>" width="40" height="40" /><?php echo " ".$rowdc3['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc3['Gia'],2,",","."); ?></a></td>
+   			  <td width="50"><a href="index.php?link=sanpham&idSP=<?php echo $rowdc3['idSP']; ?>"><img src="images/<?php echo $rowdc3['UrlHinh']; ?>" width="40" height="40" /></a></td>
+			  <td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc3['idSP']; ?>">
+				<?php echo " ".$rowdc3['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc3['Gia'],2,",","."); ?></a>
+			  </td>
 		  </tr>
           <?php
 			}
@@ -469,6 +491,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 		  </table>
         </div>
       </div>
+</div>
 </div>
 </body>
 </html>

@@ -11,6 +11,7 @@
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
 	margin-bottom: 10px;
+	
 }
 
 #namespmoinhat {
