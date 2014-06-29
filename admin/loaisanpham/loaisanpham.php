@@ -70,5 +70,6 @@ for ($k=1;$k<=$tstrang;$k++)
 	}
 }
 ?></p>
+<?PHP include_once "../footer.php" ?>
 </body>
 </html>

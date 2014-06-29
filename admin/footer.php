@@ -1,0 +1,1 @@
+<a href="/thoi-trang-tre/admin">Quay về trang Admin</a>
