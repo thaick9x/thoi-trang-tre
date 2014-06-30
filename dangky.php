@@ -22,7 +22,7 @@ $giatri="";
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
-	margin-left: 35px;
+	
 }
 .khonghople {
 	font-weight: bolder;
@@ -57,12 +57,17 @@ $giatri="";
 	font-weight: bolder;
 	color: #C00;
 }
+#trangdangky {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 <script src="jquery/jquery-1.8.0.js"></script>
 </head>
 
 <body>
+<div id="trangdangky">
 <div id="dangky">
 	<div id="namedangky">Đăng Ký Khách Hàng</div>
     <div id="contentdangky">
@@ -175,7 +180,7 @@ function kiemtradienthoai(dienthoai)
 {
 	if (dienthoai.length==0)
 	{
-		document.getElementById('ketquadienthoai').innerHTML="<div class='khonghople'>Số điện thoại không được để trống</div>";
+		document.getElementById('ketquadienthoai').innerHTML="<div class='khonghople'>Số điện thoại không được để trống và chỉ chứa chữ số</div>";
 		document.getElementById('an6').value="0";
 	}
 	else
@@ -189,7 +194,7 @@ function kiemtracmnd(cmnd)
 {
 	if (cmnd.length==0)
 	{
-		document.getElementById('ketquacmnd').innerHTML="<div class='khonghople'>Số CMND không được để trống</div>";
+		document.getElementById('ketquacmnd').innerHTML="<div class='khonghople'>Số CMND không được để trống và chỉ chứa chữ số</div>";
 		document.getElementById('an7').value="0";
 	}
 	else
@@ -307,7 +312,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   </tr>
   <tr>
     <td align="right" class="mucnho">Số điện thoại:</td>
-    <td><input type="tel" name="sodienthoai" id="sodienthoai" onblur="kiemtradienthoai(this.value)" /><input type="hidden" id="an6" name="an6" />
+    <td><input type="number" name="sodienthoai" id="sodienthoai" onblur="kiemtradienthoai(this.value)" /><input type="hidden" id="an6" name="an6" />
     *</td>
     <td><div id="ketquadienthoai"></div></td>
   </tr>
@@ -323,7 +328,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   </tr>
   <tr>
     <td align="right" class="mucnho">Số chứng minh nhân dân:</td>
-    <td><input type="text" name="socmnd" id="socmnd" onblur="kiemtracmnd(this.value)" /><input type="hidden" id="an7" name="an7" />
+    <td><input type="number" name="socmnd" id="socmnd" onblur="kiemtracmnd(this.value)" /><input type="hidden" id="an7" name="an7" />
     *</td>
     <td><div id="ketquacmnd"></div></td>
   </tr>
@@ -385,6 +390,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
 </table>
 </form>
     </div>
+</div>
 </div>
 </body>
 </html>

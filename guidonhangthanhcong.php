@@ -14,7 +14,7 @@
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
-	margin-left: 35px;
+	
 }
 
 #nameloidangnhap{
@@ -32,14 +32,20 @@
 	width: 100%;
 	text-align: justify;
 }
+#trangguidonhangthanhcong {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 </head>
 
 <body>
+<div id="trangguidonhangthanhcong">
 <div id="loidangnhap">
 	<div id="nameloidangnhap">Thông báo gửi đơn hàng thành công</div>
-    <div id="contentloidangnhap">Chúc mừng quý khách đã mua hàng của cửa hàng đồ chơi trẻ em Gia Khang thành công. Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất, để xác nhận hóa đơn của quý khách</div>
+    <div id="contentloidangnhap">Chúc mừng quý khách đã mua hàng của cửa hàng JK Fashion thành công. Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất, để xác nhận hóa đơn của quý khách</div>
+</div>
 </div>
 </body>
 </html>

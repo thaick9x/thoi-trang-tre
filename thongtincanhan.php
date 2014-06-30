@@ -22,7 +22,7 @@ $giatri="";
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
-	margin-left: 35px;
+	
 }
 .khonghople {
 	font-weight: bolder;
@@ -72,12 +72,17 @@ $giatri="";
 #contentlichsumuasam {
 	width: 100%;
 }
+#trangthongtincanhan {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 <script src="jquery/jquery-1.8.0.js"></script>
 </head>
 
 <body>
+<div id="trangthongtincanhan">
 <div id="dangky">
 	<div id="namedangky">Thông tin cá nhân</div>
     <div id="contentdangky">
@@ -435,6 +440,7 @@ while ($rowlsms=mysql_fetch_array($qrlsms))
     </div>
     
     
+</div>
 </div>
 </body>
 </html>

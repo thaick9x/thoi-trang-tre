@@ -14,7 +14,7 @@
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
-	margin-left: 35px;
+	
 }
 
 #nameloidangnhap{
@@ -32,14 +32,20 @@
 	width: 100%;
 	text-align: justify;
 }
+#trangsaidangnhap {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 </head>
 
 <body>
+<div id="trangsaidangnhap">
 <div id="loidangnhap">
 	<div id="nameloidangnhap">Lỗi đăng nhập</div>
     <div id="contentloidangnhap">Rất tiếc! Khách hàng đã đăng nhập tài khoản không tồn tại hoặc sai tên đang nhập, hay mật khẩu không đúng. Xin quý khách vui lòng kiểm tra lại tên đăng nhập và mật khẩu. Nếu khách hàng chưa có tài khoản, xin quý khách hàng đăng ký <a href="index.php?link=dangky">tại đây</a></div>
+</div>
 </div>
 </body>
 </html>
