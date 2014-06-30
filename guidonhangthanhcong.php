@@ -45,11 +45,11 @@
 <div id="loidangnhap">
 	<div id="nameloidangnhap">Đơn hàng của quý khách đã được đặt mua thành công</div>
     <div id="contentloidangnhap">
-	<img src="images/guidonhangthanhcong.jpg" align="center"><br>
-	<p>Cám ơn quý khách đã đặt hàng. Sẽ có nhân viên của JK Fashion liên hệ và giao sản phẩm tận nơi cho quý khách trong vòng 24 đến 72 giờ.</p>
-	<a href="/thoi-trang-tre" id="quayvetrangchu"><input type="submit" value="Tiếp tục mua hàng"></a>
-	<a href="" id=""></a>
-	<a href="" id=""></a>
+		<p align="center">
+			<img src="images/guidonhangthanhcong.jpg">
+		</p>
+		<p>Cám ơn quý khách đã đặt hàng. Sẽ có nhân viên của JK Fashion liên hệ và giao sản phẩm tận nơi cho quý khách trong vòng 24 đến 72 giờ.</p>
+		<a href="/thoi-trang-tre" id="quayvetrangchu"><input type="submit" value="Tiếp tục mua hàng"></a>
 	</div>
 </div>
 </div>
