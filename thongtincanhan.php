@@ -382,7 +382,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   </tr>
   <tr>
     <td colspan="3" align="center">
-      <input type="submit" name="butdangky" id="butdangky" value="Sửa" disabled="disabled" />
+      <input type="submit" name="butdangky" id="butdangky" value="Sửa"  />
       <input type="reset" name="butcancel" id="butcancel" value="Hủy" /></td>
     </tr>
 </table>
