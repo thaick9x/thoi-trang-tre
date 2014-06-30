@@ -47,12 +47,12 @@
       <td><select name="loai" id="loai">   
 		  <?php
 		  require_once '../../connect.php';
-		  $slcl="select * from sanpham";
+		  $slcl="select * from loaisanpham";
 		  $qrcl=mysql_query($slcl);
 		  while ($rowcl=mysql_fetch_array($qrcl))
 		  {
 		  ?>
-		  <option value="<?php echo $rowcl['idCL']; ?>"><?php echo $rowcl['TenSP']; ?></option>
+		  <option value="<?php echo $rowcl['idCL']; ?>"><?php echo $rowcl['TenLoai']; ?></option>
 		  <?php
 		  }
 		  ?>
