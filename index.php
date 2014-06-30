@@ -242,24 +242,24 @@ body {
     <div id="content">
    	  <div id="left">
         <div id="giohang">
-        <?php
-		if (isset ($_SESSION['giohang']) && count ($_SESSION['giohang'])>0)
-		{
-		?>
-        <p>Có <b><?php echo count($_SESSION['giohang']) ?></b> sản phẩm<br /><a href="index.php?link=chitietgiohang">Chi Tiết Giỏ Hàng</a></p>
-        <?php
-		}
-		else 
-		{
-		?>
-        <p>Giỏ hàng trống<br /><b>Chưa mua hàng</b></p>
-        
-        <?php
-		}
-		?>
-</div>
-        	<div id="menu">Danh Mục Sản Phẩm</div>
-            <div id="menudoc"><?php include ("menu_doc.php"); ?></div>
+			<?php
+			if (isset ($_SESSION['giohang']) && count ($_SESSION['giohang'])>0)
+			{
+			?>
+			<p>Có <b><?php echo count($_SESSION['giohang']) ?></b> sản phẩm<br /><a href="index.php?link=chitietgiohang">Chi Tiết Giỏ Hàng</a></p>
+			<?php
+			}
+			else 
+			{
+			?>
+			<p>Giỏ hàng trống<br /><b>Chưa mua hàng</b></p>
+			
+			<?php
+			}
+			?>
+		</div>
+		<div id="menu">Danh Mục Sản Phẩm</div>
+		<div id="menudoc"><?php include ("menu_doc.php"); ?></div>
         </div>
         <div id="right">
         <?php

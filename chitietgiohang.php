@@ -168,12 +168,13 @@ function kiemtrasoluong1()
 <body>
 <div id="trangchitietgiohang">
     <div id="chitietgiohang">
-    	<div id="namegiohang">
-        Chi Tiết Giỏ Hàng
-    </div>
+		<div id="namegiohang">
+			Chi Tiết Giỏ Hàng
+		</div>
         <div id="showgiohang">
-        <?php
-		if (isset($_POST["idDC"])) {
+<?php
+if (isset($_POST["idDC"]))
+{
 	$kt=0;// Kiểm tra mã sản phẩm có trong Session chưa ???
 	for($i=0;$i<count($_SESSION["giohang"]);$i++){
 		//Nếu có mã sản phẩm trong Session thì cập nhật số lượng của mã sản phẩm này
@@ -200,166 +201,171 @@ function kiemtrasoluong1()
 	}
 }
 if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0) 
-		{
-		?>
-        <form id="formgiohang" name="formgiohang" method="post" action="xuly_giohang.php">
-        <table width="790" border="1" cellspacing="0" cellpadding="0" bordercolor="#CC0000">
-  <tr>
-    <td width="49" align="center">STT</td>
-    <td width="256" align="center">Tên sản phẩm</td>
-    <td width="111" align="center">Giá</td>
-    <td width="120" align="center">Số lượng</td>
-    <td width="121" align="center">Thành tiền</td>
-    <td width="115" align="center">Xóa</td>
-  </tr>
-  <?php
-	$tong=0;
+{
 
-	for($i=0;$i<count($_SESSION["giohang"]);$i++) 
-	{
-  ?>
-  <tr>
-    <td align="center"><?php echo $i+1; ?></td>
-    <td><?php echo $_SESSION["giohang"][$i]["TenSP"]; ?></td>
-    <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"],2,",","."); ?></td>
-    <td align="center"><?php echo $_SESSION["giohang"][$i]["soluong"]; ?></td>
-    <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"],2,",","."); ?></td>
-    <td align="center"><a href="xuly_xoasession.php?thutu=<?php echo $i; ?>">Xóa</a></td>
-  </tr>
-  <?php
-  $tong=$tong+$_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"];
-	}
-  ?>
-  <tr>
-    <td colspan="5" align="right">Tổng cộng tiền:</td>
-    <td><?php echo number_format($tong,2,",","."); ?></td>
-	<td>   </td>
-  </tr>
-  <tr>
-    <td colspan="6" align="left">
-    
-    <?php
-	if (isset ($_SESSION['dangnhap']['idtendangnhap']))
-	{
-		$slkh="select * from users where idUser=".$_SESSION['dangnhap']['idtendangnhap'];
-		$qrkh=mysql_query($slkh);
-		if ($rowkh=mysql_fetch_array($qrkh))
-		{							 
-	?>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-    <td colspan="2" align="center"><p style="color:#06F"><b>Thông tin khách hàng và nhận hàng</b></p></td>
-    </tr>
-  <tr>
-    <td width="19%">Tên khách hàng:</td>
-    <td width="81%"><input name="tenkhachhanggiohang" type="text" id="tenkhachhanggiohang" size="40" value="<?php echo $rowkh['HoVaTen']; ?>" /></td>
-  </tr>
-  <tr>
-    <td>Số CMND:</td>
-    <td><input type="text" name="socmndgiohang" id="socmndgiohang" value="<?php echo $rowkh['SoCMND']; ?>" /></td>
-  </tr>
-  <tr>
-    <td>Số điện thoại:</td>
-    <td><input type="text" name="dienthoaigiohang" id="dienthoaigiohang" value="<?php echo $rowkh['SoDT']; ?>" /></td>
-  </tr>
-  <tr>
-    <td>Địa chỉ:</td>
-    <td><input name="diachigiohang" type="text" id="diachigiohang" size="50" value="<?php echo $rowkh['DiaChi']; ?>" /></td>
-  </tr>
-  <tr>
-    <td>Quận / Huyện</td>
-    <td>
-      <select name="quanhuyengiohang" id="quanhuyengiohang">
-      <?php
-	  $slqh="select * from quanhuyen";
-	  $qrqh=mysql_query($slqh);
-	  while ($rowqh=mysql_fetch_array($qrqh))
-	  {
-      ?>
-      <option value="<?php echo $rowqh['TenQuanHuyen']; ?>" <?php if ($rowqh['TenQuanHuyen']==$rowkh['TinhThanh']) echo "selected='selected'"; ?>><?php echo $rowqh['TenQuanHuyen']; ?></option>
-      <?php
-	  }
-	  ?>
-      </select></td>
-  </tr>
-  <tr>
-    <td width="19%" valign="top">Thông tin khác:</td>
-    <td width="81%">
-    <p style="color:#06F">Nếu biểu mẫu đơn đặt hàng của chúng tôi không đủ để ghi các thông tin cần thiết về các sản phẩm, quý khách có thể nhập các thông tin thêm vào ô thông tin ở đây để chúng tôi phục vụ tốt hơn</p>
-    <textarea name="thongtinkhac" id="thongtinkhac" cols="70" rows="5"></textarea>
-    </td>
-  </tr>
-</table>
-<?php
-		}
-	}
-	else
-	{
 ?>
-    
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-    <td colspan="2" align="center"><p style="color:#06F"><b>Thông tin khách hàng và nhận hàng</b></p></td>
-    </tr>
-  <tr>
-    <td width="19%">Tên khách hàng:</td>
-    <td width="81%"><input name="tenkhachhanggiohang" type="text" id="tenkhachhanggiohang" size="40" /></td>
-  </tr>
-  <tr>
-    <td>Số CMND:</td>
-    <td><input type="text" name="socmndgiohang" id="socmndgiohang" /></td>
-  </tr>
-  <tr>
-    <td>Số điện thoại:</td>
-    <td><input type="text" name="dienthoaigiohang" id="dienthoaigiohang" /></td>
-  </tr>
-  <tr>
-    <td>Địa chỉ:</td>
-    <td><input name="diachigiohang" type="text" id="diachigiohang" size="50" /></td>
-  </tr>
-  <tr>
-    <td>Quận / Huyện</td>
-    <td>
-      <select name="quanhuyengiohang" id="quanhuyengiohang">
-      <?php
-	  $slqh="select * from quanhuyen";
-	  $qrqh=mysql_query($slqh);
-	  while ($rowqh=mysql_fetch_array($qrqh))
-	  {
-      ?>
-      <option value="<?php echo $rowqh['TenQuanHuyen']; ?>"><?php echo $rowqh['TenQuanHuyen']; ?></option>
-      <?php
-	  }
-	  ?>
-      </select></td>
-  </tr>
-  <tr>
-    <td width="19%" valign="top">Thông tin khác:</td>
-    <td width="81%">
-    <p style="color:#06F">Nếu biểu mẫu đơn đặt hàng của chúng tôi không đủ để ghi các thông tin cần thiết về các sản phẩm, quý khách có thể nhập các thông tin thêm vào ô thông tin ở đây để chúng tôi phục vụ tốt hơn</p>
-    <textarea name="thongtinkhac" id="thongtinkhac" cols="70" rows="5"></textarea>
-    </td>
-  </tr>
-</table>
-
+    <form id="formgiohang" name="formgiohang" method="post" action="xuly_giohang.php">
+    <table width="790" border="1" cellspacing="0" cellpadding="0" bordercolor="#CC0000">
+		<tr>
+			<td width="49" align="center">STT</td>
+			<td width="256" align="center">Tên sản phẩm</td>
+			<td width="111" align="center">Giá</td>
+			<td width="120" align="center">Số lượng</td>
+			<td width="121" align="center">Thành tiền</td>
+			<td width="115" align="center">Xóa</td>
+		</tr>
 <?php
-	}
+		$tong=0;
+
+		for($i=0;$i<count($_SESSION["giohang"]);$i++) 
+		{
+?>
+			<tr>
+				<td align="center"><?php echo $i+1; ?></td>
+				<td><?php echo $_SESSION["giohang"][$i]["TenSP"]; ?></td>
+				<td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"],2,",","."); ?></td>
+				<td align="center"><?php echo $_SESSION["giohang"][$i]["soluong"]; ?></td>
+				<td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"],2,",","."); ?></td>
+				<td align="center"><a href="xuly_xoasession.php?thutu=<?php echo $i; ?>">Xóa</a></td>
+			</tr>
+<?php
+			$tong=$tong+$_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"];
+		}
+?>
+		<tr>
+			<td colspan="5" align="right">Tổng cộng tiền:</td>
+			<td><?php echo number_format($tong,2,",","."); ?></td>
+			<td>&nbsp </td>
+		</tr>
+		<tr>
+			<td colspan="6" align="left">
+    
+<?php
+			if (isset ($_SESSION['dangnhap']['idtendangnhap']))
+			{
+				$slkh="select * from users where idUser=".$_SESSION['dangnhap']['idtendangnhap'];
+				$qrkh=mysql_query($slkh);
+				if ($rowkh=mysql_fetch_array($qrkh))
+				{							 
+?>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td colspan="2" align="center"><p style="color:#06F"><b>Thông tin khách hàng và nhận hàng</b></p></td>
+						</tr>
+						<tr>
+							<td width="19%">Tên khách hàng:</td>
+							<td width="81%"><input name="tenkhachhanggiohang" type="text" id="tenkhachhanggiohang" size="40" value="<?php echo $rowkh['HoVaTen']; ?>" /></td>
+						</tr>
+						<tr>
+							<td>Số CMND:</td>
+							<td><input type="text" name="socmndgiohang" id="socmndgiohang" value="<?php echo $rowkh['SoCMND']; ?>" /></td>
+						</tr>
+						<tr>
+							<td>Số điện thoại:</td>
+							<td><input type="text" name="dienthoaigiohang" id="dienthoaigiohang" value="<?php echo $rowkh['SoDT']; ?>" /></td>
+						</tr>
+						<tr>
+							<td>Địa chỉ:</td>
+							<td><input name="diachigiohang" type="text" id="diachigiohang" size="50" value="<?php echo $rowkh['DiaChi']; ?>" /></td>
+						</tr>
+						<tr>
+							<td>Quận / Huyện</td>
+							<td>
+								<select name="quanhuyengiohang" id="quanhuyengiohang">
+<?php
+								$slqh="select * from quanhuyen";
+								$qrqh=mysql_query($slqh);
+								while ($rowqh=mysql_fetch_array($qrqh))
+								{
+?>
+									<option value="<?php echo $rowqh['TenQuanHuyen']; ?>" <?php if ($rowqh['TenQuanHuyen']==$rowkh['TinhThanh']) echo "selected='selected'"; ?>>
+										<?php echo $rowqh['TenQuanHuyen']; ?>
+									</option>
+<?php
+								}
+?>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td width="19%" valign="top">Thông tin khác:</td>
+							<td width="81%">
+								<p style="color:#06F">Nếu biểu mẫu đơn đặt hàng của chúng tôi không đủ để ghi các thông tin cần thiết về các sản phẩm, quý khách có thể nhập các thông tin thêm vào ô thông tin ở đây để chúng tôi phục vụ tốt hơn</p>
+								<textarea name="thongtinkhac" id="thongtinkhac" cols="70" rows="5"></textarea>
+							</td>
+						</tr>
+					</table>
+<?php
+				}
+			}
+			else
+			{
+?>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td colspan="2" align="center"><p style="color:#06F"><b>Thông tin khách hàng và nhận hàng</b></p></td>
+					</tr>
+					<tr>
+						<td width="19%">Tên khách hàng:</td>
+						<td width="81%"><input name="tenkhachhanggiohang" type="text" id="tenkhachhanggiohang" size="40" /></td>
+					</tr>
+					<tr>
+						<td>Số CMND:</td>
+						<td><input type="text" name="socmndgiohang" id="socmndgiohang" /></td>
+					</tr>
+					<tr>
+						<td>Số điện thoại:</td>
+						<td><input type="text" name="dienthoaigiohang" id="dienthoaigiohang" /></td>
+					</tr>
+					<tr>
+						<td>Địa chỉ:</td>
+						<td><input name="diachigiohang" type="text" id="diachigiohang" size="50" /></td>
+					</tr>
+					<tr>
+						<td>Quận / Huyện</td>
+						<td>
+							<select name="quanhuyengiohang" id="quanhuyengiohang">
+<?php
+								$slqh="select * from quanhuyen";
+								$qrqh=mysql_query($slqh);
+								while ($rowqh=mysql_fetch_array($qrqh))
+								{
+?>
+									<option value="<?php echo $rowqh['TenQuanHuyen']; ?>"><?php echo $rowqh['TenQuanHuyen']; ?></option>
+<?php
+								}
+?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td width="19%" valign="top">Thông tin khác:</td>
+						<td width="81%">
+							<p style="color:#06F">Nếu biểu mẫu đơn đặt hàng của chúng tôi không đủ để ghi các thông tin cần thiết về các sản phẩm, quý khách có thể nhập các thông tin thêm vào ô thông tin ở đây để chúng tôi phục vụ tốt hơn</p>
+							<textarea name="thongtinkhac" id="thongtinkhac" cols="70" rows="5"></textarea>
+						</td>
+					</tr>
+				</table>
+<?php
+			}
 ?>
 
-    </td>
-    </tr>
-</table><input type="hidden" id="ngaydathang" name="ngaydathang" value="<?php echo date("Y-m-d:m:s",time ()) ?>" />
-<p align="center"><input type="submit" name="guidonhang" id="guidonhang" value="Gửi Đơn Hàng" /></p>
-        </form>
-        <?php
-		}
-		else
-		{
-		
-			echo "Giỏ hàng trống. Khách hàng chưa chọn sản phẩm nào để mua."
-        
-		}
-		?>
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" id="ngaydathang" name="ngaydathang" value="<?php echo date("Y-m-d:m:s",time ()) ?>" />
+	<p align="center"><input type="submit" name="guidonhang" id="guidonhang" value="Gửi Đơn Hàng" /></p>
+	</form>
+<?php
+}
+else
+{
+
+	echo "Giỏ hàng trống. Khách hàng chưa chọn sản phẩm nào để mua.";
+
+}
+
+?>
 	</div>
     
 </div>  

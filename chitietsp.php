@@ -242,7 +242,7 @@ function kiemtrasoluong1()
     <td><input type="text" name="soluong" id="soluong" value="1" /></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><input type="button" name="butdatmua" id="butdatmua" value="Đặt mua" onclick="kiemtrasoluong1()" <?php if ($rowdc['SoLuongTonKho']==0) echo "disabled='disabled'"; else echo ""; ?> /></td>
+    <td colspan="2" align="center"><a href="index.php"><input type="button" name="butdatmua" id="butdatmua" value="Đặt mua" onclick="kiemtrasoluong1()" <?php if ($rowdc['SoLuongTonKho']==0) echo "disabled='disabled'"; else echo ""; ?> /></a></td>
     </tr>
   <tr>
     <td colspan="3" class="mota">Mô tả sản phẩm</td>
