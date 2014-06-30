@@ -18,7 +18,7 @@ if ($rowl=mysql_fetch_array($qrl))
 {
 ?>
 
-<form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/sanpham/xuly_sua.php" enctype="multipart/form-data">
+<form id="form1" name="form1" method="post" action="/thoi-trang-tre/admin/sanpham/xuly_sua.php" enctype="multipart/form-data">
   <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
 	
 	<tr>

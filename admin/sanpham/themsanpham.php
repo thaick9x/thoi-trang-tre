@@ -10,7 +10,7 @@
 
 <body>
 <p align="center" style="color:#06F; font-size:24px;"><b>Trang Quản Trị Thêm Sản Phẩm</b></p>
-<form action="http://localhost/thoi-trang-tre/admin/sanpham/xuly_them.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<form action="/thoi-trang-tre/admin/sanpham/xuly_them.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
   <table width="800" border="1" cellspacing="0" cellpadding="0" align="center">
     <tr>
       <td width="210">Tên chủng loại Sản Phẩm:</td>
@@ -114,7 +114,7 @@
     </tr>
     <tr>
       <td><input type="submit" name="them" id="them" value="Thêm" /></td>
-      <td><input type="reset" name="xoa" id="xoa" value="Hủy" /></td>
+      <td><a href="sanpham.php"><input type="button" name="xoa" id="xoa" value="Hủy" /></a></td>
     </tr>
   </table>
   <input type="hidden" id="ngaycapnhat" name="ngaycapnhat" value="<?php echo date("Y-m-d:m:s",time ()) ?>" />
