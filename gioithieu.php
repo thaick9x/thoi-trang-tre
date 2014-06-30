@@ -38,11 +38,9 @@
 	<div id="gioithieu">
 		<div id="namegioithieu">Giới thiệu</div>
     	<div id="showgioithieu">
-		<textarea rows="20" cols="95" name="data" readonly>
-			<?PHP
-				echo file_get_contents('gioithieu.txt');
-			?>
-		</textarea>
+		<?PHP
+			echo file_get_contents('gioithieu.txt');
+		?>
         </div>
 	</div>
 
