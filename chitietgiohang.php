@@ -233,8 +233,8 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 		}
 ?>
 		<tr>
-			<td colspan="5" align="right">Tổng cộng tiền:</td>
-			<td><?php echo number_format($tong,2,",","."); ?></td>
+			<td colspan="4" align="right">Tổng cộng tiền:</td>
+			<td align="center"><?php echo number_format($tong,2,",","."); ?></td>
 			<td>&nbsp </td>
 		</tr>
 		<tr>
