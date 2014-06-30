@@ -209,7 +209,7 @@ body {
 			{
 			if (isset ($_COOKIE['tendangnhap']))
 				{
-				$_SESSION['dangnhap']['tendangnhap']=$_COOKIE['tendangnhap'];
+					$_SESSION['dangnhap']['tendangnhap']=$_COOKIE['tendangnhap'];
 
 				}
 		  ?>
