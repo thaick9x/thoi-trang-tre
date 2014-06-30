@@ -13,6 +13,50 @@
 </head>
 
 <body>
+
+
+<?PHP
+if (!isset ($_COOKIE['tendangnhap']) && !isset ($_SESSION['dangnhap']['tendangnhap']))
+			{
+			?>
+			<div id="formdangnhapadmin" align="center">
+        <form id="formdangnhap2" name="formdangnhap2" method="post" action="checkadmin.php">
+		<table>
+		<tr>
+			<td>Tên đăng nhập</td>
+			<td><input type="text" name="txtuser" id="txtuser" /></td>
+		</tr>
+		<tr>
+			<td>Mật khẩu</td>
+			<td><input type="password" name="txtpass" id="txtpass" /></td>
+		</tr>
+		<tr>
+			<td align="right"><input type="checkbox" name="checkghinho" id="checkghinho" /></td>
+			<td>Ghi nhớ đăng nhập</td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="butdangnhap" id="butdangnhap" value="Đăng nhập" /></td>
+			<td><input type="button" value="Về trang chủ" onclick="location.href = '/thoi-trang-tre'" /></td>
+		</tr>
+		
+		
+		</table>
+          
+          
+        
+        
+        
+        
+        
+        </form>
+		</div>
+        <?php
+			}
+else
+
+{
+?>
+
 <div id="trangquantri">
 <p align="center" style="color:#06F; font-size:24px;"><b>Trang chủ quản trị</b></p>
 <table width="700" border="1" cellspacing="1" cellpadding="1" align="center" bordercolor="#0066FF">
@@ -41,5 +85,8 @@
 
 </div>
 
+<?PHP
+}
+?>
 </body>
 </html>
