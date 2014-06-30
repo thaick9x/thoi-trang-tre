@@ -43,8 +43,13 @@
 <body>
 <div id="trangguidonhangthanhcong">
 <div id="loidangnhap">
-	<div id="nameloidangnhap">Thông báo gửi đơn hàng thành công</div>
-    <div id="contentloidangnhap">Chúc mừng quý khách đã mua hàng của cửa hàng JK Fashion thành công. Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất, để xác nhận hóa đơn của quý khách</div>
+	<div id="nameloidangnhap">Đơn hàng của quý khách đã được đặt mua thành công</div>
+    <div id="contentloidangnhap">
+	<p>Cám ơn quý khách đã đặt hàng. Sẽ có nhân viên của JK Fashion liên hệ và giao sản phẩm tận nơi cho quý khách trong vòng 24 đến 72 giờ.</p>
+	<a href="" id=""></a>
+	<a href="" id=""></a>
+	<a href="" id=""></a>
+	</div>
 </div>
 </div>
 </body>

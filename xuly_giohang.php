@@ -27,20 +27,22 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang'])>0 && isset ($_SES
 		if(mysql_query($thongtin))
 	{
 		$id=mysql_insert_id();
-		echo $thongtin.mysql_error();
+		//echo $thongtin.mysql_error();
 		for($i=0;$i<count($_SESSION["giohang"]);$i++)
 		{
 			$masp=$_SESSION["giohang"][$i]["idSP"];
 			$soluong=$_SESSION["giohang"][$i]["soluong"];
 			$gia=$_SESSION["giohang"][$i]["Gia"];
-			$them="insert into chitiethoadon values (".$id.",'".$masp."','".$soluong."',".$gia.")";
+			$them="insert into chitiethoadon (idHoaDon, idSP, SoLuong, Gia) values (".$id.",'".$masp."','".$soluong."',".$gia.")";
+			
+		
 			if(mysql_query($them))
 			{
-								
-				}
+				
+			}
 		
 		}
-		header("index.php?link=guihoadonthanhcong");
+		header("Location: index.php?link=guihoadonthanhcong");
 
 	}
 	else echo $thongtin.mysql_error();
