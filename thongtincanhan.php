@@ -89,7 +89,7 @@ $giatri="";
     <form id="formdangky" name="formdangky" method="post" action="xuly_dangky.php" onsubmit="return kiemtradangky(an1, an2, an3, an4, an5, an6, an7, an8)" >
     <script type="text/javascript">
 	
-	function kiemtramatkhaucu(pass,an9)
+function kiemtramatkhaucu(pass,an9)
 {
 	if (pass=="")
 	{
@@ -408,7 +408,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
         <td>Giá</td>
     </tr>
 <?php
-$sllsms="select * from hoadon, chitiethoadon where hoadon.idUser='$idUser' and hoadon.idHoaDon=chitiethoadon.idHoaDon";
+$sllsms="select * from hoadon, chitiethoadon where hoadon.idUser='".$idUser."' and hoadon.idHoaDon=chitiethoadon.idHoaDon";
 $qrlsms=mysql_query($sllsms);
 while ($rowlsms=mysql_fetch_array($qrlsms))
 {
