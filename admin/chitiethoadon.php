@@ -11,21 +11,22 @@ include ("../connect.php");
 require_once '../connect.php';
 if (isset($_GET['idHoaDon']))
 {
-	$idHoaDon=$_GET['idHoaDon'];	
+	$idHoaDon=$_GET['idHoaDon'];
 	$sllsms="select * from hoadon, chitiethoadon where hoadon.idHoaDon=".$idHoaDon." and chitiethoadon.idHoaDon= hoadon.idHoaDon";
-	echo $sllsms;
-	$qrlsms=mysql_query($sllsms);
-if ($rowhd=mysql_fetch_array($qrlsms))
-{
-?>
-<p align="center" style="font-size:36px">Hóa Đơn</p>
-<p>Mã số hóa đơn:<?php echo $rowhd['idHoaDon']; ?></p>
-<p>Tên khách hàng:<?php echo $rowhd['TenKhachHang']; ?></p>
-<p>Ngày đặt hàng:<?php echo $rowhd['ThoiGianDatHang']; ?></p>
-<?php
-}
-?>
-<table width="790" border="1" cellpadding="1" cellspacing="1" align="center">
+	
+	$qrlsms=mysql_query($sllsms);	
+	
+		if ($rowhd=mysql_fetch_array($qrlsms))
+		{	
+			?>
+			<p align="center" style="font-size:36px">Hóa Đơn</p>
+			<p>Mã số hóa đơn:<?php echo $rowhd['idHoaDon']; ?></p>
+			<p>Tên khách hàng:<?php echo $rowhd['TenKhachHang']; ?></p>
+			<p>Ngày đặt hàng:<?php echo $rowhd['ThoiGianDatHang']; ?></p>
+			<?php
+		}
+	?>
+	<table width="790" border="1" cellpadding="1" cellspacing="1" align="center">
     <tr>
     	<td>Mã Số Hóa Đơn</td>
         <td>Thời Gian Đặt Hàng</td>
@@ -38,34 +39,38 @@ if ($rowhd=mysql_fetch_array($qrlsms))
         <td>Số Lượng</td>
         <td>Giá</td>
     </tr>
-<?php
-while ($rowlsms=mysql_fetch_array($qrlsms))
-{
-?>
+	<?php	
+	$idHoaDon=$_GET['idHoaDon'];
+	$sllsms1="select * from hoadon, chitiethoadon where hoadon.idHoaDon=".$idHoaDon." and chitiethoadon.idHoaDon= hoadon.idHoaDon";
+	
+	$qrlsms1=mysql_query($sllsms1);	
+	while ($rowlsms=mysql_fetch_array($qrlsms1))
+	{
+		
+	?>		
+		<tr>
+			<td><?php echo $rowlsms['idHoaDon']; ?></td>
+			<td><?php echo $rowlsms['ThoiGianDatHang'];?></td>
+			<td><?php echo $rowlsms['TenKhachHang'];?></td>
+			<td><?php echo $rowlsms['SoCMND'];?></td>
+			<td><?php echo $rowlsms['SoDT'];?></td>
+			<td><?php echo $rowlsms['DiaChi'];?></td>
+			<td><?php echo $rowlsms['TenQuanHuyen'];?></td>
+			<td><?php
+					require_once '../connect.php';
 
-	<tr>
-    	<td><?php echo $rowlsms['idHoaDon']; ?></td>
-        <td><?php echo $rowlsms['ThoiGianDatHang'];?></td>
-        <td><?php echo $rowlsms['TenKhachHang'];?></td>
-        <td><?php echo $rowlsms['SoCMND'];?></td>
-        <td><?php echo $rowlsms['SoDT'];?></td>
-        <td><?php echo $rowlsms['DiaChi'];?></td>
-        <td><?php echo $rowlsms['TenQuanHuyen'];?></td>
-        <td><?php
-				require_once '../connect.php';
-
-				$sldc="select * from sanpham where idSP=".$rowlsms['idSP'];
-				$qrdc=mysql_query($sldc);
-				if ($rowdc=mysql_fetch_array($qrdc))
-				{
-				echo $rowdc['TenSP'];
-				}
-			?></td>
-        <td><?php echo $rowlsms['SoLuong'];?></td>
-        <td><?php echo $rowlsms['Gia'];?></td>
-    </tr>
-<?php
-}
+					$sldc="select * from sanpham where idSP=".$rowlsms['idSP'];
+					$qrdc=mysql_query($sldc);
+					if ($rowdc=mysql_fetch_array($qrdc))
+					{
+					echo $rowdc['TenSP'];
+					}
+				?></td>
+			<td><?php echo $rowlsms['SoLuong'];?></td>
+			<td><?php echo $rowlsms['Gia'];?></td>
+		</tr>
+	<?php
+	}
 } 
 ?>
 
