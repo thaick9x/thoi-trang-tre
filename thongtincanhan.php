@@ -399,7 +399,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
     	<td>Mã Số Hóa Đơn</td>
         <td>Thời Gian Đặt Hàng</td>
         <td>Tên Khách Hàng</td>
-        <td>Số Chứng Minh Dân Nhân</td>
+        <td>Số CMND</td>
         <td>Số Điện Thoại</td>
         <td>Địa Chỉ</td>
         <td>Quận Huyện</td>
@@ -431,7 +431,7 @@ while ($rowlsms=mysql_fetch_array($qrlsms))
 				}
 			?></td>
         <td><?php echo $rowlsms['SoLuong'];?></td>
-        <td><?php echo $rowlsms['Gia'];?></td>
+        <td><?php echo number_format($rowlsms['Gia'],0,",",".")." VNĐ";?></td>
     </tr>
 <?php
 }
