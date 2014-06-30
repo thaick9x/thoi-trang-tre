@@ -308,7 +308,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
   ?>
   <tr>
     <td align="center"><?php echo $i+1; ?></td>
-    <td><?php echo $_SESSION["giohang"][$i]["TenDC"]; ?></td>
+    <td><?php echo $_SESSION["giohang"][$i]["TenSP"]; ?></td>
     <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"],2,",","."); ?></td>
     <td align="center"><?php echo $_SESSION["giohang"][$i]["soluong"]; ?></td>
     <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"],2,",","."); ?></td>

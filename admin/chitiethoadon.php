@@ -8,11 +8,13 @@
 <body>
 <?php
 include ("../connect.php");
+require_once '../connect.php';
 if (isset($_GET['idHoaDon']))
 {
-	$idHoaDon=$_GET['idHoaDon'];
-	$sllsms="select * from hoadon, chitiethoadon where hoadon.idHoaDon='$idHoaDon' and hoadon.idHoaDon=chitiethoadon.idHoaDon";
-$qrlsms=mysql_query($sllsms);
+	$idHoaDon=$_GET['idHoaDon'];	
+	$sllsms="select * from hoadon, chitiethoadon where hoadon.idHoaDon=".$idHoaDon." and chitiethoadon.idHoaDon= hoadon.idHoaDon";
+	echo $sllsms;
+	$qrlsms=mysql_query($sllsms);
 if ($rowhd=mysql_fetch_array($qrlsms))
 {
 ?>
@@ -50,6 +52,8 @@ while ($rowlsms=mysql_fetch_array($qrlsms))
         <td><?php echo $rowlsms['DiaChi'];?></td>
         <td><?php echo $rowlsms['TenQuanHuyen'];?></td>
         <td><?php
+				require_once '../connect.php';
+
 				$sldc="select * from sanpham where idSP=".$rowlsms['idSP'];
 				$qrdc=mysql_query($sldc);
 				if ($rowdc=mysql_fetch_array($qrdc))

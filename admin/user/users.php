@@ -19,6 +19,7 @@
     <td align="center">Số Điện Thoại</td>
     <td align="center">Số CMND</td>
     <td align="center">Phân Quyền</td>
+	<td align="center"><a href="http://localhost/thoi-trang-tre/admin/user/themusers.php">Thêm</a></td>
     
   </tr>
   <?php
@@ -56,6 +57,7 @@
 	<td align="center"><?php echo $rowdc['SoDT']; ?></td>
 	<td align="center"><?php echo $rowdc['SoCMND']; ?></td>
 	<td align="center"><?php echo $rowdc['PhanQuyen']; ?></td>
+	<td align="center"><a href="xuly_xoa.php?idUser=<?php echo $rowdc['idUser']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a><br /><a href="sua_users.php?idUser=<?php echo $rowdc['idUser']; ?>">Sửa</a></td>
   </tr>
   <?php
   }

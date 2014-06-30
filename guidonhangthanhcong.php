@@ -39,7 +39,7 @@
 <body>
 <div id="loidangnhap">
 	<div id="nameloidangnhap">Thông báo gửi đơn hàng thành công</div>
-    <div id="contentloidangnhap">Chức mừng quý khách đã mua hàng của cửa hàng đồ chơi trẻ em Gia Khang thành công. Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất, để xác nhận hóa đơn của quý khách</div>
+    <div id="contentloidangnhap">Chúc mừng quý khách đã mua hàng của cửa hàng đồ chơi trẻ em Gia Khang thành công. Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất, để xác nhận hóa đơn của quý khách</div>
 </div>
 </body>
 </html>

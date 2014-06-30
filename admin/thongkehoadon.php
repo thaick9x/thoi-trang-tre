@@ -37,7 +37,7 @@ while ($row=mysql_fetch_array($qr))
     <td><?php echo $row['TenQuanHuyen'];?></td>
     <td><?php echo $row['GhiChu'];?></td>
     <td><?php echo $row['TinhTrang'];?></td>
-    <td align="center"><a href="admin/chitiethoadon.php?idHoaDon=<?php echo $row['idHoaDon']; ?>" target="_blank">In</a></td>
+    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/chitiethoadon.php?idHoaDon=<?php echo $row['idHoaDon']; ?>" target="_blank">In</a></td>
 </tr>
 <?php
 }

@@ -5,10 +5,11 @@ ob_start();
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-include ("connect.php");
+require_once 'connect.php';
 
 if (isset($_SESSION['giohang']) && count($_SESSION['giohang'])>0 && isset ($_SESSION['dangnhap']['idtendangnhap']))
 {
+	require_once 'connect.php';
 	$sluser="select * from users where idUser=".$_SESSION['dangnhap']['idtendangnhap'];
 	$qruser=mysql_query($sluser);
 	if (mysql_num_rows($qruser)>0)

@@ -11,7 +11,7 @@ $link="images/";
 if (isset ($_POST['chungloai']) && isset ($_POST['loai']))
 {
 	require_once '../../connect.php';
-	$sl="insert into sanpham (`idCL`,`idLoai`,`TenDC`,`MoTa`,`NgayCapNhat`,`Gia`,`UrlHinh`,`SoLuongTonKho`,`AnHien`) values ('".$_POST['chungloai']."','1','".$_POST['sanpham']."','".$_POST['mota']."','".$_POST['ngaycapnhat']."','".$_POST['gia']."','".$_FILES['hinhanh']['name']."','".$_POST['soluongthem']."','".$_POST['anhien']."')";
+	$sl="insert into sanpham (`idCL`,`idLoai`,`TenSP`,`MoTa`,`NgayCapNhat`,`Gia`,`UrlHinh`,`SoLuongTonKho`,`AnHien`) values ('".$_POST['chungloai']."','1','".$_POST['sanpham']."','".$_POST['mota']."','".$_POST['ngaycapnhat']."','".$_POST['gia']."','".$_FILES['hinhanh']['name']."','".$_POST['soluongthem']."','".$_POST['anhien']."')";
 	if (mysql_query($sl))
 	{
 		$link=$link.basename($_FILES['hinhanh']['name']);

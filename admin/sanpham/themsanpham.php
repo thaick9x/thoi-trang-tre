@@ -45,6 +45,17 @@
     <tr>
       <td>Tên loại sản phẩm:</td>
       <td><select name="loai" id="loai">   
+		  <?php
+		  require_once '../../connect.php';
+		  $slcl="select * from sanpham";
+		  $qrcl=mysql_query($slcl);
+		  while ($rowcl=mysql_fetch_array($qrcl))
+		  {
+		  ?>
+		  <option value="<?php echo $rowcl['idCL']; ?>"><?php echo $rowcl['TenSP']; ?></option>
+		  <?php
+		  }
+		  ?>
       </select></td>
     </tr>
     <tr>
