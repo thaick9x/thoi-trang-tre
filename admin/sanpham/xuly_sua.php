@@ -4,14 +4,24 @@
 <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 <title>Untitled Document</title>
 </head>
+
 <?php ob_start();
+$link="images/";
 if (isset ($_POST['idSP']))
-$idSP=$_POST['idSP'];
-include ("../../connect.php");
-$sl="update sanpham set TenSP='".$_POST['tensanpham']."',MoTa='".$_POST['Mota']."', AnHien='".$_POST['anhien']."' where idSP='".$idSP."'";
-echo $sl;
-if (mysql_query($sl))
-	header ("location:sanpham.php");
-else 
-	echo "Sửa loại sản phẩm thất bại";
+{
+	$idSP=$_POST['idSP'];
+	include ("../../connect.php");
+	$sl="update sanpham set TenSP='".$_POST['tensanpham']."',MoTa ='".$_POST['mota']."',Gia='".$_POST['gia']."',UrlHinh ='".$_FILES['hinhanh']['name']."', AnHien='".$_POST['anhien']."' where idSP ='".$idSP."'";
+	echo $sl;
+		if (mysql_query($sl))
+		{
+			$link=$link.basename($_FILES['hinhanh']['name']);
+			if (move_uploaded_file($_FILES['hinhanh']['tmp_name'],$link))
+			{
+				header ("location:http://localhost/thoi-trang-tre/admin/sanpham/sanpham.php");
+			}
+			else 
+				echo "Thêm SP thất bại";
+		}
+}
 ?>

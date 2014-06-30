@@ -4,27 +4,87 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
-
+<script src="jquery/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <body>
 <?php
 require_once '../../connect.php';
 if (isset ($_GET['idSP']))
 $idSP=$_GET['idSP'];
 
-$sll="select * from sanpham where idSP='$idSP'";
+$sll="select * from sanpham,loaisanpham,chungloaisanpham where idSP=".$idSP."";
 $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
 {
 ?>
-<form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/sanpham/xuly_sua.php">
+
+<form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/sanpham/xuly_sua.php" enctype="multipart/form-data">
   <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
+	<tr>
+      <td>Tên Chủng Loại:</td>
+      <td><input name="tenchungloai" type="text" id="tenchungloai" size="30" value="<?php echo $rowl['TenCL']; ?>" /></td>
+    </tr>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#chungloai").change(function(){
+				$.ajax({
+					type:"POST",
+					url:"../../index.php?link=xulyjquerythemsanpham",
+					data:"idCL="+$("#chungloai").val(),
+					success:function(ketqualoai){
+						$("#loai").html(ketqualoai);
+					}
+				});
+			});
+		});
+	</script>
 	<tr>
       <td>Tên Sản Phẩm:</td>
       <td><input name="tensanpham" type="text" id="tensanpham" size="30" value="<?php echo $rowl['TenSP']; ?>" /></td>
     </tr>
+	<tr>
+      <td>Tên Loại Sản Phẩm:</td>
+      <td><input name="loaisanpham" type="text" id="loaisanpham" size="30" value="<?php echo $rowl['TenLoai']; ?>" /></td>
+    </tr>
     <tr>
-      <td>Mô tả:</td>
-      <td><input name="Mota" type="text" id="Mota" size="30" value="<?php echo $rowl['MoTa']; ?>" /></td>
+      <td valign="top">Mô tả:</td>
+      <td><textarea name="mota" id="mota" cols="70" rows="10" ><?php echo $rowl['MoTa']; ?></textarea>
+      <script type="text/javascript">
+			//<![CDATA[
+
+				// This call can be placed at any point after the
+				// <textarea>, or inside a <head><script> in a
+				// window.onload event handler.
+
+				// Replace the <textarea id="editor"> with an CKEditor
+				// instance, using default configurations.
+				CKEDITOR.replace( 'mota',
+	{
+		toolbar :
+		[
+			{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike' ] },
+			{ name: 'paragraph', items : [ 'NumberedList','BulletedList' ] },
+			{ name: 'tools', items : [ 'Maximize' ] },
+			{ name: 'colors', items : [ 'TextColor','BGColor' ] },
+			{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
+		]
+	});
+				
+//Tham khao thiet lap toolbar: http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Toolbar#Toolbar_Customization
+				
+
+			//]]>
+			</script>
+      </td>
+    </tr>
+	<tr>
+      <td>Giá:</td>
+      <td><input name="gia" type="text" id="gia" size="30" value="<?php echo $rowl['Gia']; ?>" /></td>
+    </tr>
+	<tr>
+      <td>Hình Ảnh:</td>
+	  <td align="center"><img src="images/<?php echo $rowl['UrlHinh']; ?>" width="50" height="60" />
+      <input name="hinhanh" type="file" id="hinhanh" size="50" /></td>
     </tr>
     <tr>
       <td>Ẩn hiện:</td>
