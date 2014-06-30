@@ -121,7 +121,7 @@ if ($rowl=mysql_fetch_array($qrl))
     </tr>
     <tr>
       <td><input type="submit" name="sua" id="sua" value="Sửa" /></td>
-      <td><input type="reset" name="huy" id="huy" value="Hủy" /></td>
+      <td><a href="sanpham.php"><input type="button" name="huy" id="huy" value="Hủy" /></a></td>
     </tr>
   </table>
   <input type="hidden" id="idSP" name="idSP" value="<?php echo $rowl['idSP']; ?>" />
