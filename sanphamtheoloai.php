@@ -14,7 +14,7 @@
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
-	margin-left: 35px;
+	
 }
 
 #namesanphamtheoloai {
@@ -31,11 +31,16 @@
 #contentsptl {
 	width: 100%;
 }
+#trangloaisp {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 </head>
 
 <body>
+<div id="trangloaisp">
 <?php
 include ("connect.php");
 
@@ -112,5 +117,7 @@ $qrl=mysql_query($sll);
         
     </div>
 </div>
+</div>
+
 </body>
 </html>

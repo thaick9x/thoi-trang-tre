@@ -14,7 +14,7 @@
 	moz-border-radius-topright: 15px;
 	webkit-border-top-right-radius: 15px;
 	border-top-right-radius: 15px;
-	margin-left: 35px;
+	
 }
 
 #namesanphamtheochungloai {
@@ -31,11 +31,16 @@
 #contentsptcl {
 	width: 100%;
 }
+#trangchungloaisp {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 </head>
 
 <body>
+<div id="trangchungloaisp">
 <?php
 include ("connect.php");
 
@@ -111,6 +116,7 @@ $qrcl=mysql_query($slcl);
 ?></p>
         
     </div>
+</div>
 </div>
 </body>
 </html>

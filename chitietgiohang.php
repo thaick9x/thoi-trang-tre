@@ -23,12 +23,10 @@
 	border-radius: 15px;
 }
 #chitietgiohang {
-	width: 786px;
+	width: 790px;
 	border: 2px solid #C00;
 	border-radius: 15px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-left: 40px;
+	
 }
 #namegiohang {
 	font-size: 22px;
@@ -109,7 +107,10 @@
 	width: 100%;
 	text-align: center;
 }
-
+#trangchitietgiohang {
+	margin: auto;
+	width: 730px;
+}
 -->
 </style>
 </head>
@@ -165,6 +166,7 @@ function kiemtrasoluong1()
 }
 </script>
 <body>
+<div id="trangchitietgiohang">
     <div id="chitietgiohang">
     	<div id="namegiohang">
         Chi Tiết Giỏ Hàng
@@ -201,7 +203,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 		{
 		?>
         <form id="formgiohang" name="formgiohang" method="post" action="xuly_giohang.php">
-        <table width="786" border="1" cellspacing="0" cellpadding="0" bordercolor="#CC0000">
+        <table width="790" border="1" cellspacing="0" cellpadding="0" bordercolor="#CC0000">
   <tr>
     <td width="49" align="center">STT</td>
     <td width="256" align="center">Tên sản phẩm</td>
@@ -362,6 +364,6 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 </div>  
     
 
-
+</div>
 </body>
 </html>

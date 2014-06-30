@@ -41,7 +41,8 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang'])>0 && isset ($_SES
 				}
 		
 		}
-		header("index.php?link=guihoadonthanhcong");
+		echo "<script type='text/javascript'>alert('Gửi đơn hàng thành công');</script>";
+		header("index.php");
 
 	}
 	else echo $thongtin.mysql_error();
