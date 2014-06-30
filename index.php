@@ -220,7 +220,7 @@ body {
 					$rowquyen=mysql_fetch_array($qrquyen);
 					if ($rowquyen['PhanQuyen']==1)
 						{?>
-                vào trang  <a href="http://localhost//thoi-trang-tre/admin/index.php">Quản trị</a>
+                vào trang  <a href="/thoi-trang-tre/admin/index.php">Quản trị</a>
           <?php
 						}
 				}

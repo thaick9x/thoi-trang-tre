@@ -5,11 +5,10 @@ ob_start();
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-require_once 'connect.php';
+include ("connect.php");
 
 if (isset($_SESSION['giohang']) && count($_SESSION['giohang'])>0 && isset ($_SESSION['dangnhap']['idtendangnhap']))
 {
-	require_once 'connect.php';
 	$sluser="select * from users where idUser=".$_SESSION['dangnhap']['idtendangnhap'];
 	$qruser=mysql_query($sluser);
 	if (mysql_num_rows($qruser)>0)
@@ -41,8 +40,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang'])>0 && isset ($_SES
 				}
 		
 		}
-		echo "<script type='text/javascript'>alert('Gửi đơn hàng thành công');</script>";
-		header("index.php");
+		header("index.php?link=guihoadonthanhcong");
 
 	}
 	else echo $thongtin.mysql_error();

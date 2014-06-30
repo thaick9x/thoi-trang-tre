@@ -233,6 +233,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
   <tr>
     <td colspan="5" align="right">Tổng cộng tiền:</td>
     <td><?php echo number_format($tong,2,",","."); ?></td>
+	<td>   </td>
   </tr>
   <tr>
     <td colspan="6" align="left">
@@ -354,9 +355,9 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 		}
 		else
 		{
-		?>
-        Giỏ hàng trống. Khách hàng chưa chọn sản phẩm nào để mua.
-        <?php
+		
+			echo "Giỏ hàng trống. Khách hàng chưa chọn sản phẩm nào để mua."
+        
 		}
 		?>
 	</div>
