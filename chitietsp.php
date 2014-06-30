@@ -309,9 +309,9 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
   <tr>
     <td align="center"><?php echo $i+1; ?></td>
     <td><?php echo $_SESSION["giohang"][$i]["TenSP"]; ?></td>
-    <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"],0,",","."); ?></td>
+    <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"],0,",",".")." VNĐ"; ?></td>
     <td align="center"><?php echo $_SESSION["giohang"][$i]["soluong"]; ?></td>
-    <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"],0,",","."); ?></td>
+    <td align="center"><?php echo number_format($_SESSION["giohang"][$i]["Gia"]*$_SESSION["giohang"][$i]["soluong"],0,",",".")." VNĐ"; ?></td>
     <td align="center"><a href="xuly_xoasession.php?thutu=<?php echo $i; ?>">Xóa</a></td>
   </tr>
   <?php
@@ -320,7 +320,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
   ?>
   <tr>
     <td colspan="5" align="right">Tổng cộng tiền:</td>
-    <td><?php echo number_format($tong,0,",","."); ?></td>
+    <td><?php echo number_format($tong,0,",",".")." VNĐ"; ?></td>
   </tr>
   <tr>
     <td colspan="6" align="left">
@@ -461,7 +461,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 			{
 			?>
   			<tr>
-    			<td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc2['idSP']; ?>"><img src="images/<?php echo $rowdc2['UrlHinh']; ?>" width="40" height="40" /><?php echo " ".$rowdc2['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc2['Gia'],0,",","."); ?></a></td>
+    			<td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc2['idSP']; ?>"><img src="images/<?php echo $rowdc2['UrlHinh']; ?>" width="40" height="40" /><?php echo " ".$rowdc2['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc2['Gia'],0,",",".")." VNĐ"; ?></a></td>
   			</tr>
             <?php
 			}
@@ -482,7 +482,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
 		  <tr>
    			  <td width="50"><a href="index.php?link=sanpham&idSP=<?php echo $rowdc3['idSP']; ?>"><img src="images/<?php echo $rowdc3['UrlHinh']; ?>" width="40" height="40" /></a></td>
 			  <td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc3['idSP']; ?>">
-				<?php echo " ".$rowdc3['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc3['Gia'],0,",","."); ?></a>
+				<?php echo " ".$rowdc3['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc3['Gia'],0,",",".")." VNĐ"; ?></a>
 			  </td>
 		  </tr>
           <?php
