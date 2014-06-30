@@ -246,10 +246,10 @@ function kiemtrasoluong1()
 	</td>
     </tr>
   <tr>
-    <td colspan="3" class="mota">Mô tả sản phẩm</td>
+    <td colspan="3" " class="mota">Mô tả sản phẩm</td>
     </tr>
     <tr>
-    <td colspan="3"><?php echo $rowdc['MoTa']; ?></td>
+    <td colspan="3" align="left"><?php echo $rowdc['MoTa']; ?></td>
     </tr>
   
 </table>
