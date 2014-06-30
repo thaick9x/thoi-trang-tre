@@ -86,7 +86,7 @@ $giatri="";
 <div id="dangky">
 	<div id="namedangky">Thông tin cá nhân</div>
     <div id="contentdangky">
-    <form id="formdangky" name="formdangky" method="post" action="xuly_dangky.php" onsubmit="return kiemtradangky(an1, an2, an3, an4, an5, an6, an7, an8)" >
+    <form id="formdangky" name="formdangky" method="post" action="xuly_suathongtin.php" onsubmit="return kiemtradangky(an1, an2, an3, an4, an5, an6, an7, an8)" >
     <script type="text/javascript">
 	
 function kiemtramatkhaucu(pass,an9)
@@ -234,7 +234,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
 	if ($rowuser=mysql_fetch_array($qruser))
 	{
 	?>
-    <table width="790" border="0" cellspacing="0" cellpadding="0">
+ <table width="790" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="205" class="muclon">Thông tin tài khoản:</td>
     <td width="316">&nbsp;</td>
@@ -243,6 +243,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
   <tr>
     <td align="right" class="mucnho">Tên đăng nhập:</td>
     <td><input type="text" name="tendangnhap" id="tendangnhap" maxlength="22" disabled="disabled" value="<?php echo $rowuser['TenDangNhap']; ?>" /><input type="hidden" id="an1" name="an1" />
+		<input name="acc" type="hidden" id="acc" size="40" value="<?php echo $idUser; ?>" />
     *</td>
     <td><div id="ketquatendangnhap"></div></td>
   </tr>
