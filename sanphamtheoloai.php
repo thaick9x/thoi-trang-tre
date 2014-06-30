@@ -78,7 +78,7 @@ $qrl=mysql_query($sll);
   <td width="140" valign="middle" align="center">
             	<p><a href="index.php?link=sanpham&idSP=<?php echo $row2['idSP']; ?>"><img src="images/<?php echo $row2['UrlHinh'];?>" width="100" height="100" /></a></p>
             	<p><b><?php echo $row2['TenSP']; ?></b></p>
-            	<p style="color:#F00">Giá:<?php echo number_format($row2['Gia'],2,",",".");?></p>
+            	<p style="color:#F00">Giá:<?php echo number_format($row2['Gia'],0,",",".");?></p>
                 <a href="index.php?link=sanpham&idSP=<?php echo $row2['idSP']; ?>">Xem chi tiết</a>
             </td>
             <?php
@@ -90,7 +90,7 @@ $qrl=mysql_query($sll);
   <td width="140" valign="middle" align="center">
             	<p><a href="index.php?link=sanpham&idSP=<?php echo $row2['idSP']; ?>"><img src="images/<?php echo $row2['UrlHinh'];?>" width="100" height="100" /></a></p>
             	<p><b><?php echo $row2['TenSP']; ?></b></p>
-            	<p style="color:#F00">Giá:<?php echo number_format($row2['Gia'],2,",",".");?></p>
+            	<p style="color:#F00">Giá:<?php echo number_format($row2['Gia'],0,",",".");?></p>
                 <a href="index.php?link=sanpham&idSP=<?php echo $row2['idSP']; ?>">Xem chi tiết</a>
             </td>
             <?php
