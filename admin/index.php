@@ -31,12 +31,12 @@ if (!isset ($_COOKIE['tendangnhap']) && !isset ($_SESSION['dangnhap']['tendangnh
 			<td><input type="password" name="txtpass" id="txtpass" /></td>
 		</tr>
 		<tr>
-			<td><input type="checkbox" name="checkghinho" id="checkghinho" /></td>
+			<td align="right"><input type="checkbox" name="checkghinho" id="checkghinho" /></td>
 			<td>Ghi nhớ đăng nhập</td>
 		</tr>
 		<tr>
 			<td><input type="submit" name="butdangnhap" id="butdangnhap" value="Đăng nhập" /></td>
-			<td><input type="button" value="Trang chủ" onclick="location.href = '/thoi-trang-tre'" /></td>
+			<td><input type="button" value="Về trang chủ" onclick="location.href = '/thoi-trang-tre'" /></td>
 		</tr>
 		
 		
