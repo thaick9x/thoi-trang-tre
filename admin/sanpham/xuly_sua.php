@@ -11,7 +11,7 @@ if (isset ($_POST['idSP']))
 {
 	$idSP=$_POST['idSP'];
 	include ("../../connect.php");
-	$sl="update sanpham set TenSP='".$_POST['tensanpham']."',MoTa ='".$_POST['mota']."',Gia='".$_POST['gia']."',UrlHinh ='".$_FILES['hinhanh']['name']."', AnHien='".$_POST['anhien']."' where idSP ='".$idSP."'";
+	$sl="update sanpham set idCL = '".$_POST['chungloai']."',idLoai = '".$_POST['loai']."', TenSP='".$_POST['tensanpham']."',MoTa ='".$_POST['mota']."',Gia='".$_POST['gia']."',UrlHinh ='".$_FILES['hinhanh']['name']."', AnHien='".$_POST['anhien']."' where idSP ='".$idSP."'";
 	echo $sl;
 		if (mysql_query($sl))
 		{

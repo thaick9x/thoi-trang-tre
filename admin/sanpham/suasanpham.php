@@ -20,9 +20,23 @@ if ($rowl=mysql_fetch_array($qrl))
 
 <form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/sanpham/xuly_sua.php" enctype="multipart/form-data">
   <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
+	
 	<tr>
       <td>Tên Chủng Loại:</td>
-      <td><input name="tenchungloai" type="text" id="tenchungloai" size="30" value="<?php echo $rowl['TenCL']; ?>" /></td>
+	  <td><select name="chungloai" id="chungloai">
+      <?php
+	  require_once '../../connect.php';
+	  $slcl="select * from chungloaisanpham";
+	  $qrcl=mysql_query($slcl);
+	  while ($rowcl=mysql_fetch_array($qrcl))
+	  {
+	  ?>
+      <option value="<?php echo $rowcl['idCL']; ?>"> <?php echo $rowcl['TenCL']; ?></option>
+      <?php
+	  }
+	  ?>
+      </select></td> 
+      
     </tr>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -39,12 +53,24 @@ if ($rowl=mysql_fetch_array($qrl))
 		});
 	</script>
 	<tr>
-      <td>Tên Sản Phẩm:</td>
-      <td><input name="tensanpham" type="text" id="tensanpham" size="30" value="<?php echo $rowl['TenSP']; ?>" /></td>
+      <td>Tên Loại Sản Phẩm:</td>
+      <td><select name="loai" id="loai">   
+		  <?php
+		  require_once '../../connect.php';
+		  $slcl="select * from loaisanpham";
+		  $qrcl=mysql_query($slcl);
+		  while ($rowcl=mysql_fetch_array($qrcl))
+		  {
+		  ?>
+		  <option value="<?php echo $rowcl['idLoai']; ?>"><?php echo $rowcl['TenLoai']; ?></option>
+		  <?php
+		  }
+		  ?>
+      </select></td>
     </tr>
 	<tr>
-      <td>Tên Loại Sản Phẩm:</td>
-      <td><input name="loaisanpham" type="text" id="loaisanpham" size="30" value="<?php echo $rowl['TenLoai']; ?>" /></td>
+      <td>Tên Sản Phẩm:</td>
+      <td><input name="tensanpham" type="text" id="tensanpham" size="30" value="<?php echo $rowl['TenSP']; ?>" /></td>
     </tr>
     <tr>
       <td valign="top">Mô tả:</td>

@@ -22,7 +22,7 @@
 	  while ($rowcl=mysql_fetch_array($qrcl))
 	  {
 	  ?>
-      <option value="<?php echo $rowcl['idCL']; ?>"><?php echo $rowcl['TenCL']; ?></option>
+      <option value="<?php echo $rowcl['idCL']; ?>"> <?php echo $rowcl['TenCL']; ?></option>
       <?php
 	  }
 	  ?>
@@ -52,7 +52,7 @@
 		  while ($rowcl=mysql_fetch_array($qrcl))
 		  {
 		  ?>
-		  <option value="<?php echo $rowcl['idCL']; ?>"><?php echo $rowcl['TenLoai']; ?></option>
+		  <option value="<?php echo $rowcl['idLoai']; ?>"><?php echo $rowcl['TenLoai']; ?></option>
 		  <?php
 		  }
 		  ?>
