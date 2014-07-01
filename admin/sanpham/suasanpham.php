@@ -12,7 +12,8 @@ require_once '../../connect.php';
 if (isset ($_GET['idSP']))
 $idSP=$_GET['idSP'];
 
-$sll="select * from sanpham,loaisanpham,chungloaisanpham where idSP=".$idSP."";
+$sll="select * from sanpham where idSP=".$idSP."";
+echo $sll;
 $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
 {
@@ -24,6 +25,7 @@ if ($rowl=mysql_fetch_array($qrl))
 	<tr>
       <td>Tên Chủng Loại:</td>
 	  <td><select name="chungloai" id="chungloai">
+	  
       <?php
 	  require_once '../../connect.php';
 	  $slcl="select * from chungloaisanpham";
@@ -54,7 +56,7 @@ if ($rowl=mysql_fetch_array($qrl))
 	</script>
 	<tr>
       <td>Tên Loại Sản Phẩm:</td>
-      <td><select name="loai" id="loai">   
+      <td><select name="loai" id="loai" value="<?php echo $rowl['idLoai']; ?>">   
 		  <?php
 		  require_once '../../connect.php';
 		  $slcl="select * from loaisanpham";

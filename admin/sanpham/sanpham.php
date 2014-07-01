@@ -26,7 +26,7 @@
   $sldc="select * from sanpham";
   $qrdc= mysql_query($sldc);
   $tsdong=mysql_num_rows($qrdc);
-  $sodong=100;
+  $sodong=1000;
   $tstrang=ceil($tsdong/$sodong);//Tính được tổng số trang
   //Lấy được số trang
   if (isset($_GET['trang']))
