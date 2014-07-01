@@ -40,7 +40,7 @@
 }
 #showspcungcl {
 	width: 100%;
-	text-align: center;
+	text-align: left;
 }
 #namespcungcl {
 	font-size: 20px;
@@ -456,15 +456,18 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
     	<div id="spcungcl">
         	<div id="namespcungcl">Sản phẩm cùng chủng loại</div>
             <div id="showspcungcl">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table width="100%" border="0" cellspacing="2" cellpadding="1">
             <?php
-			$sldc2="select * from dochoi where idCL=".$rowdc['idCL']." limit 0,10";
+			$sldc2="select * from sanpham where idCL=".$rowdc['idCL']." limit 0,4";
 			$qrdc2=mysql_query($sldc2);
-			while (@$rowdc2=mysql_fetch_array($qrdc2))
+			while ($rowdc2=mysql_fetch_array($qrdc2))
 			{
 			?>
   			<tr>
-    			<td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc2['idSP']; ?>"><img src="images/<?php echo $rowdc2['UrlHinh']; ?>" width="40" height="40" /><?php echo " ".$rowdc2['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc2['Gia'],0,",",".")." VNĐ"; ?></a></td>
+				<td width="50"><a href="index.php?link=sanpham&idSP=<?php echo $rowdc2['idSP']; ?>"><img src="images/<?php echo $rowdc2['UrlHinh']; ?>" width="40" height="40" /></a></td>
+			  <td><a href="index.php?link=sanpham&idSP=<?php echo $rowdc2['idSP']; ?>">
+				<?php echo " ".$rowdc2['TenSP']."<br>"; echo " "."Giá: ".number_format($rowdc2['Gia'],0,",",".")." VNĐ"; ?></a>
+			  </td>
   			</tr>
             <?php
 			}
@@ -477,7 +480,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
         <div id="showspcungloaidc">
 		<table width="100%" border="0" cellspacing="2" cellpadding="1">
           <?php
-			$sldc3="select * from sanpham where idLoai=".$rowdc['idLoai']." limit 0,10";
+			$sldc3="select * from sanpham where idLoai=".$rowdc['idLoai']." limit 0,4";
 			$qrdc3=mysql_query($sldc3);
 			while ($rowdc3=mysql_fetch_array($qrdc3))
 			{
