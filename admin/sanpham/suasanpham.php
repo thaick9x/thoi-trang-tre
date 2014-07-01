@@ -13,7 +13,6 @@ if (isset ($_GET['idSP']))
 $idSP=$_GET['idSP'];
 
 $sll="select * from sanpham where idSP=".$idSP."";
-echo $sll;
 
 $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
