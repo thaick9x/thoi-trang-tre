@@ -20,13 +20,21 @@ if (isset ($_POST['idSP']))
 	echo $sl;
 	if (mysql_query($sl))
 	{
-		$link=$link.basename($_FILES['hinhanh']['name']);
-		if (move_uploaded_file($_FILES['hinhanh']['tmp_name'],$link))
+		if (($urlhinh = $_FILES['hinhanh']['name']) !== '')
 		{
+			$link=$link.basename($_FILES['hinhanh']['name']);
+			if (move_uploaded_file($_FILES['hinhanh']['tmp_name'],$link))
+			{
+				header ("location:/thoi-trang-tre/admin/sanpham/sanpham.php");
+			}
+			else 
+				echo "Thêm SP thất bại";
+		}
+		else
+		{
+			echo "Thêm SP thành công";
 			header ("location:/thoi-trang-tre/admin/sanpham/sanpham.php");
 		}
-		else 
-			echo "Thêm SP thất bại";
 	}
 }
 ?>
