@@ -14,9 +14,12 @@ $idSP=$_GET['idSP'];
 
 $sll="select * from sanpham where idSP=".$idSP."";
 echo $sll;
+
 $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
 {
+	$selectedLoai = $rowl['idLoai'];
+	$selectedChungLoai = $rowl['idCL'];
 ?>
 
 <form id="form1" name="form1" method="post" action="/thoi-trang-tre/admin/sanpham/xuly_sua.php" enctype="multipart/form-data">
@@ -33,7 +36,7 @@ if ($rowl=mysql_fetch_array($qrl))
 	  while ($rowcl=mysql_fetch_array($qrcl))
 	  {
 	  ?>
-      <option value="<?php echo $rowcl['idCL']; ?>"> <?php echo $rowcl['TenCL']; ?></option>
+      <option value="<?php echo $rowcl['idCL']; ?>" <?PHP  if ($selectedChungLoai== $rowcl['idCL']) echo "selected";?>> <?php echo $rowcl['TenCL']; ?></option>
       <?php
 	  }
 	  ?>
@@ -55,8 +58,9 @@ if ($rowl=mysql_fetch_array($qrl))
 		});
 	</script>
 	<tr>
+		
       <td>Tên Loại Sản Phẩm:</td>
-      <td><select name="loai" id="loai" value="<?php echo $rowl['idLoai']; ?>">   
+      <td><select name="loai" id="loai" >   
 		  <?php
 		  require_once '../../connect.php';
 		  $slcl="select * from loaisanpham";
@@ -64,7 +68,7 @@ if ($rowl=mysql_fetch_array($qrl))
 		  while ($rowcl=mysql_fetch_array($qrcl))
 		  {
 		  ?>
-		  <option value="<?php echo $rowcl['idLoai']; ?>"><?php echo $rowcl['TenLoai']; ?></option>
+		  <option value="<?php echo $rowcl['idLoai']; ?>" <?PHP  if ($selectedLoai == $rowcl['idLoai']) echo "selected";?>><?php echo $rowcl['TenLoai']; ?></option>
 		  <?php
 		  }
 		  ?>
@@ -112,7 +116,7 @@ if ($rowl=mysql_fetch_array($qrl))
 	<tr>
       <td>Hình Ảnh:</td>
 	  <td align="center"><img src="images/<?php echo $rowl['UrlHinh']; ?>" width="50" height="60" />
-      <input name="hinhanh" type="file" id="hinhanh" size="50" /></td>
+      <input name="hinhanh" type="file" id="hinhanh" size="50" value= "<?php echo $rowl['UrlHinh'];?>" /></td>
     </tr>
     <tr>
       <td>Ẩn hiện:</td>
