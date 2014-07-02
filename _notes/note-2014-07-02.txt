@@ -1,0 +1,11 @@
+﻿5.
+- trạng thái xem: có tác dụng gì
+- tại sao chỉ được đi theo chiều 1-> 4
+
+6.
+- sp chạy nhất: giới hạn bao nhiêu dòng trong bảng? hay là show hết và sắp xếp theo thứ tự.
+- sp bán ế nhất: giới hạn bao nhiêu dòng trong bảng? hay là show hết và sắp xếp theo thứ tự.
+
+7.
+- các ngày trong tháng là khoảng thời gian liên tục nhau (từ ngày nào đến ngày nào) hay là chọn nhiều ngày rồi chỉ show ra các ngày đó
+
