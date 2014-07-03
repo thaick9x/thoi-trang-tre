@@ -25,10 +25,7 @@ if (isset($_POST['thang']))
 
 <p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Tháng <?PHP echo $thang."-".$nam ?></b></p>
 <table border="1" cellpadding="1" cellspacing="1" align="center" width="250" bordercolor="#0066FF">
-<tr>
-	<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu tháng</p></td>
-    <td align="center"><?php echo $row['TongDoanhThu']; ?></td>
-</tr>
+
 <tr>
 	<td align="center"><p style="color:#F00">ID Sản Phẩm</p></td>
 	<td align="center"><p style="color:#F00">Tên Sản Phẩm</p></td>
@@ -61,12 +58,17 @@ if (isset($_POST['thang']))
 			<?php
 		
 	}
+?>
+<tr>
+<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu tháng</p></td>
+<td align="center"><?php echo $row['TongDoanhThu']; ?></td>
+</tr>
 
-
-
+<?PHP
 }
 
 ?>
+
 </table>
 </body>
 </html>
