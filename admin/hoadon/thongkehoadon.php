@@ -10,18 +10,19 @@
 <table border="1" cellpadding="1" cellspacing="1" align="center" width="750" bordercolor="#0066FF">
 <tr>
 	<td align="center"><p style="color:#F00">Mã số hóa đơn</p></td>
-    <td align="center"><p style="color:#F00">Thời đặt hàng</p></td>
+    <td align="center"><p style="color:#F00">Thời gian đặt hàng</p></td>
     <td align="center"><p style="color:#F00">Tên khách hàng</p></td>
     <td align="center"><p style="color:#F00">Số CMND</p></td>
     <td align="center"><p style="color:#F00">Số điện thoại</p></td>
     <td align="center"><p style="color:#F00">Địa chỉ</p></td>
     <td align="center"><p style="color:#F00">Tên quận huyện</p></td>
+	<td align="center"><p style="color:#F00">Thời gian giao hàng</p></td>
     <td align="center"><p style="color:#F00">Ghi Chú</p></td>
     <td align="center"><p style="color:#F00">Tình trạng hóa đơn</p></td>
-    <td align="center"><p style="color:#F00">In hóa đơn</p></td>
+    <td align="center"><p style="color:#F00">Tùy chọn</p></td>
 </tr>
 <?php
-require_once '../connect.php';
+require_once '../../connect.php';
 $sl="select * from hoadon";
 $qr=mysql_query($sl);
 while ($row=mysql_fetch_array($qr))
@@ -35,9 +36,13 @@ while ($row=mysql_fetch_array($qr))
     <td><?php echo $row['SoDT'];?></td>
     <td><?php echo $row['DiaChi'];?></td>
     <td><?php echo $row['TenQuanHuyen'];?></td>
+	<td><?php echo $row['ThoiGianGiaoHang'];?></td>
     <td><?php echo $row['GhiChu'];?></td>
     <td><?php echo $row['TinhTrang'];?></td>
-    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/chitiethoadon.php?idHoaDon=<?php echo $row['idHoaDon']; ?>" target="_blank">In</a></td>
+    <td align="center">
+		<a href="/thoi-trang-tre/admin/inhoadon.php?idHoaDon=<?php echo $row['idHoaDon']; ?>" target="_blank">In</a>
+		
+	</td>
 </tr>
 <?php
 }

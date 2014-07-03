@@ -7,8 +7,8 @@
 
 <body>
 <?php
-include ("../connect.php");
-require_once '../connect.php';
+
+require_once '../../connect.php';
 if (isset($_GET['idHoaDon']))
 {
 	$idHoaDon=$_GET['idHoaDon'];
