@@ -12,7 +12,7 @@ define ("NAMKETTHUC", 2020);
 </head>
 
 <body>
-<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Theo Tháng</b></p>
+<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Theo Năm</b></p>
 
 <form id="formdoanhthunam" name="formdoanhthunam" action="" method="post">
 	<p align="center" style="color:#06F; font-size:16px;">Chọn năm

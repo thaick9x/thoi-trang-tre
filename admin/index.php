@@ -76,6 +76,7 @@ echo "Chào ".$_SESSION['dangnhap']['tendangnhap'];
 				<a href="/thoi-trang-tre/admin/chinhsua/?link=lienhe"><p>Trang liên hệ</p></a>
 			</td>
 			<td width="227" valign="top"><a href="/thoi-trang-tre/admin/thongkehangdahet.php"><p>Hàng đã hết trong kho</p></a>
+				<a href="/thoi-trang-tre/admin/doanhthungay.php"><p>Doanh thu theo ngày</p></a>
 				<a href="/thoi-trang-tre/admin/doanhthuthang.php"><p>Doanh thu theo tháng</p></a>
 				<a href="/thoi-trang-tre/admin/doanhthunam.php"><p>Doanh thu theo năm</p></a>
 				<a href="/thoi-trang-tre/admin/thongkehoadon.php"><p>Thống kê hóa đơn</p></a>
