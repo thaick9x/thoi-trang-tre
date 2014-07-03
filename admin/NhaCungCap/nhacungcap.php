@@ -1,4 +1,4 @@
-﻿error_reporting(E_ALL & ~ E_NOTICE);
+﻿
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +14,7 @@
     <td align="center">Tên Nhà Cung Cấp</td>
     <td align="center">Địa Chỉ</td>
     <td align="center">Thông tin</td>
-    <td align="center">Ẩn hiện</td>
+    
     <td align="center"><a href="/thoi-trang-tre/admin/nhacungcap/themnhacungcap.php">Thêm</a></td>
   </tr>
   <?php
@@ -36,7 +36,7 @@
 		<td><?php echo $ncc['TenNCC']; ?></td>
 		<td><?php echo $ncc['DiaChi'];?></td>
 		<td><?php echo $ncc['ThongTin'];?></td>
-		<td align="center"><?php if ($ncc['AnHien']==0) echo "Ẩn"; if ($ncc['AnHien']==1) echo "Hiện"; ?></td>
+		
 		<td align="center"><a href="/thoi-trang-tre/admin/nhacungcap/xuly_xoa.php?idNCC=<?php echo $ncc['idNCC']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="/thoi-trang-tre/admin/nhacungcap/suanhacungcap.php?idNCC=<?php echo $ncc['idNCC']; ?>">Sửa</a></td>
 	  </tr>
 	  <?php

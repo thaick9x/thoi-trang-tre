@@ -13,10 +13,10 @@
 </head>
 <?php ob_start();
 require_once '../../connect.php';
-$sl="insert into nhacungcap (`TenNCC`,`DiaChi`,`ThongTin`,`AnHien`) value ('".$_POST['tenNCC']."','".$_POST['DiaChi']."','".$_POST['ThongTin']."','".$_POST['anhien']."')";
+$sl="insert into nhacungcap (`TenNCC`,`DiaChi`,`ThongTin`,`AnHien`) value ('".$_POST['tennhacungcap']."','".$_POST['diachinhacungcap']."','".$_POST['thongtinnhacungcap']."','".$_POST['anhien']."')";
 if (mysql_query($sl))
 {
-	header ("location:http://localhost/thoi-trang-tre/admin/nhacungcap/nhacungcap.php");
+	header ("location: nhacungcap.php");
 }
 else
 	echo "Thêm Nhà Cung Cấp thất bại";

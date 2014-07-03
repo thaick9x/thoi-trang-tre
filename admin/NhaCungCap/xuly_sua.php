@@ -6,7 +6,7 @@
 </head>
 <?php ob_start();
 require_once '../../connect.php';
-$sl="update nhacungcap set `TenNCC`='".$_POST['tenNCC']."', `DiaChi`='".$_POST['DiaChi']."',`ThongTin`='".$_POST['ThongTin']."',`AnHien`='".$_POST['anhien']."' where idNCC=".$_POST['idNCC'];
+$sl="update nhacungcap set `TenNCC`='".$_POST['tennhacungcap']."', `DiaChi`='".$_POST['diachinhacungcap']."',`ThongTin`='".$_POST['thongtinnhacungcap']."',`AnHien`='".$_POST['anhien']."' where idNCC=".$_POST['idNCC'];
 if (mysql_query($sl))
 {
 	header ("location:nhacungcap.php");
