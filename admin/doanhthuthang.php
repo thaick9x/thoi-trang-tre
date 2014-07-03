@@ -7,41 +7,65 @@
 
 <body>
 <p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Theo Tháng</b></p>
+
+<form id="formdoanhthuthang" name="formdoanhthuthang" action="" method="post">
+	<p align="center" style="color:#06F; font-size:16px;">Chọn tháng
+	<input type="month" name="thang">
+	<input type="submit" name="Submit" value="OK">
+	</p>
+</form>
+
+<?PHP
+if (isset($_POST['thang']))
+{
+	$thang = substr($_POST['thang'],5,2);
+	$nam = substr($_POST['thang'],0,4);
+  
+?>
+
+<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Tháng <?PHP echo $thang."-".$nam ?></b></p>
 <table border="1" cellpadding="1" cellspacing="1" align="center" width="250" bordercolor="#0066FF">
+<tr>
+	<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu tháng</p></td>
+    <td align="center"><?php echo $row['TongDoanhThu']; ?></td>
+</tr>
 <tr>
 	<td align="center"><p style="color:#F00">ID Sản Phẩm</p></td>
 	<td align="center"><p style="color:#F00">Tên Sản Phẩm</p></td>
 	<td align="center"><p style="color:#F00">Số Lượng</p></td>
-	<td align="center"><p style="color:#F00">Doanh Thu Tháng</p></td>
-    <td align="center"><p style="color:#F00">Tổng</p></td>
+	<td align="center"><p style="color:#F00">Đơn Giá</p></td>
+	<td align="center"><p style="color:#F00">Ngày Mua Hàng</p></td>
+	<td align="center"><p style="color:#F00">Ngày Xuất Hàng</p></td>
+	<td align="center"><p style="color:#F00">Khách Hàng</p></td>
+	<td align="center"><p style="color:#F00">Thành Tiền</p></td>
 </tr>
 <?php
-require_once '../connect.php';
-for($i=1;$i<13;$i++)
-{
-	$sl="select idSP,SoLuong,SUM(gia),ThangXuatHD from chitiethoadon where ThangXuatHD = ".$i."";
-	$qr=mysql_query($sl);
-	while ($row=mysql_fetch_array($qr))
+	require_once '../connect.php';
+	$query = "select A.*,`TenSP` from `sanpham` inner join (SELECT `idSP`,`ThoiGianDatHang`,`ThoiGianGiaoHang`,`TenKhachHang`,`SoLuong`,`Gia`,SoLuong*Gia as ThanhTien, SUM(SoLuong*Gia) as TongDoanhThu FROM `chitiethoadon` inner join `hoadon` on `chitiethoadon`.`idHoaDon` = `hoadon`.`idHoaDon` where `ThangXuatHD`=$thang and `NamHD`=$nam) as A on `sanpham`.`idSP` = A.`idSP`";
+
+	$kq = mysql_query($query);
+	while ($row=mysql_fetch_array($kq))
 	{
-		if($row[0]>0)
-		{
+		
 			?>
 			<tr>
 				<td align="center"><?php echo $row['idSP']; ?></td>
+				<td align="center"><?php echo $row['TenSP']; ?></td>
 				<td align="center"><?php echo $row['SoLuong']; ?></td>
-				<td align="center"><?php
-					$slcl="select * from sanpham where idSP=".$row['idSP'];
-					$qrcl=mysql_query($slcl);
-					$rowcl=mysql_fetch_array($qrcl);
-					echo $rowcl['TenSP'];
-				?></td>
-				<td align="center"><?php echo $row['ThangXuatHD']; ?></td>
-				<td align="center"><?php echo $row['SUM(gia)']; ?></td>				
+				<td align="center"><?php echo $row['Gia']; ?></td>
+				<td align="center"><?php echo $row['ThoiGianDatHang']; ?></td>
+				<td align="center"><?php echo $row['ThoiGianGiaoHang']; ?></td>
+				<td align="center"><?php echo $row['TenKhachHang']; ?></td>
+				<td align="center"><?php echo $row['ThanhTien']; ?></td>
 			</tr>
 			<?php
-		}
+		
 	}
+
+
+
 }
+
 ?>
 </table>
 </body>

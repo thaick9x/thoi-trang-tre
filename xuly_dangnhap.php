@@ -14,6 +14,7 @@ if (mysql_num_rows($qrdn)>0)
 	$rowdn=mysql_fetch_array($qrdn);
 	$_SESSION['dangnhap']['tendangnhap']=$tendangnhap;
 	$_SESSION['dangnhap']['idtendangnhap']=$rowdn['idUser'];
+	$_SESSION['dangnhap']['quyen']=$rowdn['PhanQuyen'];
 	if (isset ($_POST['checkghinho']))
 	{
 		setcookie("tendangnhap","$tendangnhap",time()+120);
