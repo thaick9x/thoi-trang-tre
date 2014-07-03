@@ -79,10 +79,12 @@ if (isset($_POST['nam']))
 				<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu năm</p></td>
 				<td align="center"><?php echo $row['TongDoanhThu']; ?></td>
 			</tr>
+			
+</table>
 <?PHP
 }
 
 ?>
-</table>
+
 </body>
 </html>

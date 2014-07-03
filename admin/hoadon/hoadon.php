@@ -88,7 +88,7 @@ while ($row=mysql_fetch_array($qr))
     <td><?php echo $row['GhiChu'];?></td>
     <td><?php echo $row['TinhTrang'];?></td>
     <td align="center">
-		<a href="/thoi-trang-tre/admin/hoadon/chitiethoadon.php?idHoaDon=<?php echo $row['idHoaDon']; ?>" target="_blank">Xem</a>
+		<a href="/thoi-trang-tre/admin/hoadon/chitiethoadon.php?idHoaDon=<?php echo $row['idHoaDon']; ?>" target="_blank">Chi Tiết</a>
 		
 	</td>
 </tr>

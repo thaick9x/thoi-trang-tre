@@ -1,3 +1,20 @@
+<?PHP
+require_once '../../connect.php';
+// lay danh sach tinh trang
+$query = "select * from tinhtrang";
+$kq = mysql_query($query);
+$TRANG_THAI_HOA_DON = array();
+$TRANG_THAI_HOA_DON[-1] = 'Tất cả';
+while ($row = mysql_fetch_array($kq))
+{
+	$TRANG_THAI_HOA_DON[$row['idTinhTrang']] = $row['TinhTrang'];
+}
+
+///
+
+?>
+<?PHP //error_reporting(E_ERROR | E_PARSE); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +29,7 @@ require_once '../../connect.php';
 if (isset($_GET['idHoaDon']))
 {
 	$idHoaDon=$_GET['idHoaDon'];
-	$query="select * from hoadon inner join tinhtrang on hoadon.idTinhTrang = tinhtrang.idTinhTrang where hoadon.idHoaDon=".$idHoaDon;
+	$query="select * from hoadon where hoadon.idHoaDon=".$idHoaDon;
 	
 	$kq=mysql_query($query);
 	
@@ -37,7 +54,7 @@ if (isset($_GET['idHoaDon']))
 					<td>Địa Chỉ: <?php echo $row['DiaChi'];?></td>
 				</tr>
 				<tr>
-					<td>Tình trạng: <?php echo $row['TinhTrang'];?></td>
+					<td>Tình trạng: <?php echo $tinhtrang = $TRANG_THAI_HOA_DON[$row['idTinhTrang']];?></td>
 					<td>Quận/Huyện: <?php echo $row['TenQuanHuyen'];?></td>
 				</tr>
 				
@@ -84,8 +101,28 @@ if (isset($_GET['idHoaDon']))
 				<input type="<?PHP if (isset($_POST['inhoadon'])) echo 'hidden'; else echo 'submit' ?>" name="inhoadon" value="In Hóa Đơn">
 			</form>
 <?PHP
-if (isset($_POST['inhoadon']))
+if (!isset($_POST['inhoadon']))
 {
+	switch ($tinhtrang)
+	{
+		case 'Xem':
+			?>
+			<a href="xuly_trangthai.php?idHoaDon=<?PHP echo $idHoaDon;?>&next=2">Xác nhận đơn hàng</a><br>
+			<a href="xuly_trangthai.php?idHoaDon=<?PHP echo $idHoaDon;?>&next=4">Hủy đơn hàng</a><br>
+			<?PHP
+			break;
+		case 'Chưa giao hàng':
+			?>
+			<a href="xuly_trangthai.php?idHoaDon=<?PHP echo $idHoaDon;?>&next=3">Xác nhận đã giao hàng</a><br>
+			<?PHP
+			break;
+		
+	?>
+	
+	<?PHP
+	}
+}
+else {
 ?>
 <br />
 <br />

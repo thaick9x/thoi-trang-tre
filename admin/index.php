@@ -70,6 +70,7 @@ echo "Chào ".$_SESSION['dangnhap']['tendangnhap'];
 				<a href="/thoi-trang-tre/admin/loaisanpham/loaisanpham.php"><p>Loại Sản Phẩm</p></a>
 				<a href="/thoi-trang-tre/admin/sanpham/sanpham.php"><p>Sản Phẩm</p></a>
 				<a href="/thoi-trang-tre/admin/user/users.php"><p>Users</p></a>
+				<a href="/thoi-trang-tre/admin/hoadon/hoadon.php"><p>Hóa Đơn</p></a>
 			</td>
 			<td width="227" valign="top"><a href="/thoi-trang-tre/admin/chinhsua/?link=gioithieu"><p>Trang giới thiệu</p></a>
 				<a href="#"><p>Trang tuyển dụng</p></a>
@@ -79,7 +80,7 @@ echo "Chào ".$_SESSION['dangnhap']['tendangnhap'];
 				<a href="/thoi-trang-tre/admin/doanhthungay.php"><p>Doanh thu theo ngày</p></a>
 				<a href="/thoi-trang-tre/admin/doanhthuthang.php"><p>Doanh thu theo tháng</p></a>
 				<a href="/thoi-trang-tre/admin/doanhthunam.php"><p>Doanh thu theo năm</p></a>
-				<a href="/thoi-trang-tre/admin/thongkehoadon.php"><p>Thống kê hóa đơn</p></a>
+				
 			</td>
 		</tr>
 		<tr>
