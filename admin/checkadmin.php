@@ -9,7 +9,7 @@ include ("../connect.php");
 if (isset ($_POST['txtuser']) && isset ($_POST['txtpass']))
 {
 	$tendangnhap=$_POST['txtuser'];
-	$matkhau=$_POST['txtpass'];
+	$matkhau=md5($_POST['txtpass']);
 }
 
 $sldn="select * from users where PhanQuyen='1' and TenDangNhap='$tendangnhap' and MatKhau='$matkhau'";

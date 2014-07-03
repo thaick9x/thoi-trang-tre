@@ -7,7 +7,7 @@
 
 <body>
 <p align="center" style="color:#06F; font-size:24px;"><b>Trang Quản Trị Thêm Tài Khoản</b></p>
-<form name="form1" id="form1" method="post" action="http://localhost/thoi-trang-tre/admin/user/xuly_them.php">
+<form name="form1" id="form1" method="post" action="xuly_them.php">
 <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
   <tr>
       <td>Tên Đăng Nhập </td>
@@ -64,7 +64,7 @@
   </tr>
   <tr>
     <td><input type="submit" name="them" id="them" value="Thêm" /></td>
-    <td><button onclick="goBack()">Hủy</button></td>
+    <td><a href="users.php"><input type="button" name="huy" id="huy" value="Hủy" /></a></td>
   </tr>
 </table>
 </form>

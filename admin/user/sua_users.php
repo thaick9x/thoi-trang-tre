@@ -16,7 +16,7 @@ $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
 {
 ?>
-<form id="form1" name="form1" method="post" action="http://localhost/thoi-trang-tre/admin/user/xuly_sua.php?idUser=<?php echo $rowl['idUser']; ?>">
+<form id="form1" name="form1" method="post" action="/thoi-trang-tre/admin/user/xuly_sua.php?idUser=<?php echo $rowl['idUser']; ?>">
   <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
 	<tr>
       <td>Tên Đăng Nhập </td>
@@ -50,6 +50,14 @@ if ($rowl=mysql_fetch_array($qrl))
       <td>Số CMND</td>
       <td><input name="cmnd" type="text" id="cmnd" size="30" value="<?php echo $rowl['SoCMND']; ?>" /></td>
     </tr>
+	<tr>
+      <td>Ngày cấp</td>
+      <td><input name="ngaycmnd" type="text" id="ngaycmnd" size="30" value="<?php echo $rowl['NgayCapCMND']; ?>" /></td>
+    </tr>
+	<tr>
+      <td>Nơi cấp</td>
+      <td><input name="noicmnd" type="text" id="noicmnd" size="30" value="<?php echo $rowl['NoiCapCMND']; ?>" /></td>
+    </tr>
     <tr>
       <td>Phân Quyền:</td>
       <td><select name="phanquyen" id="phanquyen">
@@ -59,7 +67,7 @@ if ($rowl=mysql_fetch_array($qrl))
     </tr>
     <tr>
       <td><input type="submit" name="sua" id="sua" value="Sửa" /></td>      
-	  <td><button type="button" onclick=" href="index.php?link=users.php">Hủy</button></td>
+	  <td><a href="users.php"><input type="button" value="Hủy"></a></td>
     </tr>
   </table>
   <input type="hidden" id="idSP" name="idSP" value="<?php echo $rowl['idSP']; ?>" />
