@@ -15,7 +15,7 @@
     <td align="center">Địa Chỉ</td>
     <td align="center">Thông tin</td>
     <td align="center">Ẩn hiện</td>
-    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/nhacungcap/themnhacungcap.php">Thêm</a></td>
+    <td align="center"><a href="/thoi-trang-tre/admin/nhacungcap/themnhacungcap.php">Thêm</a></td>
   </tr>
   <?php
     //put your code here
@@ -28,8 +28,8 @@
   {
 	for($i=0;$i<$no_of_rows;$i++)
 	{
-		$cl=mysql_fetch_array($qr);
-		  
+		$ncc=mysql_fetch_array($qr);
+			
 		?>
 	  <tr>
 		<td align="center"><?php echo $ncc['idNCC']; ?></td>
@@ -37,7 +37,7 @@
 		<td><?php echo $ncc['DiaChi'];?></td>
 		<td><?php echo $ncc['ThongTin'];?></td>
 		<td align="center"><?php if ($ncc['AnHien']==0) echo "Ẩn"; if ($ncc['AnHien']==1) echo "Hiện"; ?></td>
-		<td align="center"><a href="http://localhost/thoi-trang-tre/admin/nhacungcap/xuly_xoa.php?idNCC=<?php echo $ncc['idNCC']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="http://localhost/thoi-trang-tre/admin/nhacungcap/suanhacungcap.php?idNCC=<?php echo $ncc['idNCC']; ?>">Sửa</a></td>
+		<td align="center"><a href="/thoi-trang-tre/admin/nhacungcap/xuly_xoa.php?idNCC=<?php echo $ncc['idNCC']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="/thoi-trang-tre/admin/nhacungcap/suanhacungcap.php?idNCC=<?php echo $ncc['idNCC']; ?>">Sửa</a></td>
 	  </tr>
 	  <?php
 	}
