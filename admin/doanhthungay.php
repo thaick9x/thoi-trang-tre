@@ -1,7 +1,3 @@
-<?PHP
-define ("NAMBATDAU", 2010);
-define ("NAMKETTHUC", 2020);
-?>
 <?PHP //error_reporting(E_ERROR | E_PARSE); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,34 +8,25 @@ define ("NAMKETTHUC", 2020);
 </head>
 
 <body>
-<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Theo Tháng</b></p>
+<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Theo Ngày</b></p>
 
-<form id="formdoanhthunam" name="formdoanhthunam" action="" method="post">
-	<p align="center" style="color:#06F; font-size:16px;">Chọn năm
-	<select name="nam" >
-<?PHP
-		for ($i = NAMBATDAU; $i <= NAMKETTHUC; $i++)
-		{
-?>
-			<option value="<?PHP echo $i; ?>">
-			<?PHP echo $i; ?>
-			</option>
-<?PHP
-		}
-?>
-	</select>
+<form id="formdoanhthungay" name="formdoanhthungay" action="" method="post">
+	<p align="center" style="color:#06F; font-size:16px;">Chọn ngày
+	<input type="date" name="ngay">
 	<input type="submit" name="Submit" value="OK">
 	</p>
 </form>
 
 <?PHP
-if (isset($_POST['nam']))
+if (isset($_POST['ngay']))
 {
-	$nam = $_POST['nam'];
+	$ngay = substr($_POST['ngay'],8,2);
+	$thang = substr($_POST['ngay'],5,2);
+	$nam = substr($_POST['ngay'],0,4);
 	
 ?>
 
-<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Năm <?PHP echo $nam; ?></b></p>
+<p align="center" style="color:#06F; font-size:24px;"><b>Doanh Thu Ngày <?PHP echo $ngay."-".$thang."-".$nam ?></b></p>
 <table border="1" cellpadding="1" cellspacing="1" align="center" width="250" bordercolor="#0066FF">
 
 <tr>
@@ -54,7 +41,7 @@ if (isset($_POST['nam']))
 </tr>
 <?php
 	require_once '../connect.php';
-	$query = "select A.*,`TenSP` from `sanpham` inner join (SELECT `idSP`,`ThoiGianDatHang`,`ThoiGianGiaoHang`,`TenKhachHang`,`SoLuong`,`Gia`,SoLuong*Gia as ThanhTien, SUM(SoLuong*Gia) as TongDoanhThu FROM `chitiethoadon` inner join `hoadon` on `chitiethoadon`.`idHoaDon` = `hoadon`.`idHoaDon` where `NamHD`=$nam) as A on `sanpham`.`idSP` = A.`idSP`";
+	$query = "select A.*,`TenSP` from `sanpham` inner join (SELECT `idSP`,`ThoiGianDatHang`,`ThoiGianGiaoHang`,`TenKhachHang`,`SoLuong`,`Gia`,SoLuong*Gia as ThanhTien, SUM(SoLuong*Gia) as TongDoanhThu FROM `chitiethoadon` inner join `hoadon` on `chitiethoadon`.`idHoaDon` = `hoadon`.`idHoaDon` where ThoiGianGiaoHang = '".$_POST['ngay']."') as A on `sanpham`.`idSP` = A.`idSP`";
 
 	$kq = mysql_query($query);
 	while ($row=mysql_fetch_array($kq))
@@ -75,14 +62,16 @@ if (isset($_POST['nam']))
 		
 	}
 ?>
-			<tr>
-				<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu năm</p></td>
-				<td align="center"><?php echo $row['TongDoanhThu']; ?></td>
-			</tr>
+<tr>
+<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu ngày</p></td>
+<td align="center"><?php echo $row['TongDoanhThu']; ?></td>
+</tr>
+
 <?PHP
 }
 
 ?>
+
 </table>
 </body>
 </html>
