@@ -62,6 +62,22 @@
       <td>Tên sản phẩm:</td>
       <td><input name="sanpham" type="text" id="sanpham" size="50" /></td>
     </tr>
+	<tr>
+      <td>Nhà cung cấp:</td>
+      <td><select name="ncc" id="ncc">   
+		  <?php
+		  require_once '../../connect.php';
+		  $slcl="select * from nhacungcap";
+		  $qrcl=mysql_query($slcl);
+		  while ($rowcl=mysql_fetch_array($qrcl))
+		  {
+		  ?>
+		  <option value="<?php echo $rowcl['idNCC']; ?>"><?php echo $rowcl['TenNCC']; ?></option>
+		  <?php
+		  }
+		  ?>
+      </select></td>
+    </tr>
     <tr>
       <td valign="top">Mô tả:</td>
       <td><textarea name="mota" id="mota" cols="70" rows="10"></textarea>

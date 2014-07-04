@@ -19,6 +19,7 @@ if ($rowl=mysql_fetch_array($qrl))
 {
 	$selectedLoai = $rowl['idLoai'];
 	$selectedChungLoai = $rowl['idCL'];
+	$selectedNCC = $rowl['idNCC'];
 ?>
 
 <form id="form1" name="form1" method="post" action="/thoi-trang-tre/admin/sanpham/xuly_sua.php" enctype="multipart/form-data">
@@ -76,6 +77,23 @@ if ($rowl=mysql_fetch_array($qrl))
 	<tr>
       <td>Tên Sản Phẩm:</td>
       <td><input name="tensanpham" type="text" id="tensanpham" size="30" value="<?php echo $rowl['TenSP']; ?>" /></td>
+    </tr>
+	<tr>
+		
+      <td>Nhà Cung Cấp:</td>
+      <td><select name="ncc" id="ncc" >   
+		  <?php
+		  require_once '../../connect.php';
+		  $slcl="select * from nhacungcap";
+		  $qrcl=mysql_query($slcl);
+		  while ($rowcl=mysql_fetch_array($qrcl))
+		  {
+		  ?>
+		  <option value="<?php echo $rowcl['idNCC']; ?>" <?PHP  if ($selectedNCC == $rowcl['idNCC']) echo "selected";?>><?php echo $rowcl['TenNCC']; ?></option>
+		  <?php
+		  }
+		  ?>
+      </select></td>
     </tr>
     <tr>
       <td valign="top">Mô tả:</td>
