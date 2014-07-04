@@ -415,7 +415,7 @@ while ($rowlsms=mysql_fetch_array($qrlsms))
         <td><?php echo $rowlsms['ThoiGianDatHang'];?></td>
         <td><?php echo $rowlsms['ThoiGianGiaoHang'];?></td>
         <td><?php echo $rowlsms['TinhTrang'];?></td>
-		<td><a href="index.php?link=chitiethd&idHD=<?php echo $rowlsms['idHoaDon']; ?>">Chi Tiết</a></td>
+		<td><a href="index.php?link=chitiethd&idHD=<?php echo $rowlsms['idHoaDon']; ?>&idUser=<?php echo $idUser; ?>">Chi Tiết</a></td>
     </tr>
 <?php
 }

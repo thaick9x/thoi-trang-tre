@@ -175,7 +175,7 @@ if (isset($_GET['idHD']))
 	if ($tinhtrang === 'Xem')
 	{
 	?>
-		<a href="xuly_trangthai.php?idHoaDon=<?PHP echo $idHoaDon;?>&next=4"><input type="button" value="Hủy đơn hàng"></input></a><br>
+		<a href="xuly_trangthai.php?idHoaDon=<?PHP echo $idHoaDon;?>&next=4&idUser=<?PHP echo $_GET['idUser'];?>"><input type="button" value="Hủy đơn hàng"></a><br>
 	<?PHP
 
 	}
