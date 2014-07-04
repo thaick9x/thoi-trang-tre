@@ -192,7 +192,7 @@ function kiemtrasoluong1()
 		mysql_query($sltangxem);
 	}
 	
-	$sldc="select * from sanpham where idSP='$idSP'";
+	$sldc="SELECT sanpham.*, idCL FROM sanpham INNER JOIN loaisanpham ON sanpham.idLoai = loaisanpham.idLoai WHERE idSP='$idSP'";
 	$qrdc=mysql_query($sldc);
 	if ($rowdc=mysql_fetch_array($qrdc))
 	echo $rowdc['TenSP'];
@@ -458,7 +458,7 @@ if (isset($_SESSION["giohang"]) && count($_SESSION["giohang"])>0)
             <div id="showspcungcl">
             <table width="100%" border="0" cellspacing="2" cellpadding="1">
             <?php
-			$sldc2="select * from sanpham where idCL=".$rowdc['idCL']." limit 0,4";
+			$sldc2="SELECT * FROM sanpham INNER JOIN loaisanpham ON sanpham.idLoai = loaisanpham.idLoai WHERE idCL=".$rowdc['idCL']." LIMIT 0,4";
 			$qrdc2=mysql_query($sldc2);
 			while ($rowdc2=mysql_fetch_array($qrdc2))
 			{

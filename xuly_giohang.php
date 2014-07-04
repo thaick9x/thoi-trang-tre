@@ -23,7 +23,7 @@ if (isset($_SESSION['giohang']) && count($_SESSION['giohang'])>0 && isset ($_SES
 		$diachigiohang=$_REQUEST['diachigiohang'];
 		$quanhuyengiohang=$_REQUEST['quanhuyengiohang'];
 		$thongtinkhac=$_REQUEST['thongtinkhac'];	
-		$thongtin="insert into hoadon (`idUser`,`ThoiGianDatHang`,`TenKhachHang`,`SoCMND`,`SoDT`,`DiaChi`,`TenQuanHuyen`,`GhiChu`) values (".$_SESSION['dangnhap']['idtendangnhap'].",'".$ngaydathang."','".$tenkh."','".$socmndgiohang."','".$dienthoaigiohang."','".$diachigiohang."','".$quanhuyengiohang."','".$thongtinkhac."')";
+		$thongtin="insert into hoadon (`idUser`,`ThoiGianDatHang`,`TenKhachHang`,`SoCMND`,`SoDT`,`DiaChi`,`TenQuanHuyen`,`GhiChu`, `idTinhTrang`) values (".$_SESSION['dangnhap']['idtendangnhap'].",'".$ngaydathang."','".$tenkh."','".$socmndgiohang."','".$dienthoaigiohang."','".$diachigiohang."','".$quanhuyengiohang."','".$thongtinkhac."', 1)";
 		if(mysql_query($thongtin))
 	{
 		$id=mysql_insert_id();
