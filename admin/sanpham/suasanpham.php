@@ -12,7 +12,7 @@ require_once '../../connect.php';
 if (isset ($_GET['idSP']))
 $idSP=$_GET['idSP'];
 
-$sll="select * from sanpham where idSP=".$idSP."";
+$sll="select sanpham.*, loaisanpham.idCL from sanpham INNER JOIN loaisanpham ON sanpham.idLoai = loaisanpham.idLoai where idSP=".$idSP."";
 
 $qrl=mysql_query($sll);
 if ($rowl=mysql_fetch_array($qrl))
