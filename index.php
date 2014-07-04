@@ -299,6 +299,8 @@ body {
 			case "xulygiohang": include ("xuly_giohang.php");break;
 			case "thongkehoadon": include ("admin/thongkehoadon.php");break;
 			case "guihoadonthanhcong": include ("guidonhangthanhcong.php");break;
+			case "chitiethd": include ("chitiethd.php");break;
+			
 			default: include ("index_content.php");break;
 			
 		}

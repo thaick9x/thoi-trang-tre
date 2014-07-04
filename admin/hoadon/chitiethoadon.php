@@ -25,7 +25,7 @@ while ($row = mysql_fetch_array($kq))
 <body>
 <?php
 
-require_once '../../connect.php';
+
 if (isset($_GET['idHoaDon']))
 {
 	$idHoaDon=$_GET['idHoaDon'];

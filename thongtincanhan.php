@@ -401,6 +401,7 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
         <td>Thời Gian Đặt Hàng</td>
         <td>Thời Gian Giao Hàng</td>
         <td>Tình Trạng</td>
+		<td>Tùy Chọn</td>
     </tr>
 <?php
 $sllsms="SELECT * FROM hoadon INNER JOIN tinhtrang ON hoadon.idTinhTrang = tinhtrang.idTinhTrang WHERE hoadon.idUser=".$idUser;
@@ -414,17 +415,7 @@ while ($rowlsms=mysql_fetch_array($qrlsms))
         <td><?php echo $rowlsms['ThoiGianDatHang'];?></td>
         <td><?php echo $rowlsms['ThoiGianGiaoHang'];?></td>
         <td><?php echo $rowlsms['TinhTrang'];?></td>
-        
-        <td><?php
-				$sldc="select * from sanpham where idSP=".$rowlsms['idSP'];
-				$qrdc=mysql_query($sldc);
-				if ($rowdc=mysql_fetch_array($qrdc))
-				{
-				echo $rowdc['TenSP'];
-				}
-			?></td>
-        <td><?php echo $rowlsms['SoLuong'];?></td>
-        <td><?php echo number_format($rowlsms['Gia'],0,",",".")." VNĐ";?></td>
+		<td><a href="index.php?link=chitiethd&idHD=<?php echo $rowlsms['idHoaDon']; ?>">Chi Tiết</a></td>
     </tr>
 <?php
 }
