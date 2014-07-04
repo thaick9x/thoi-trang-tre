@@ -54,8 +54,9 @@ if (isset($_POST['nam']))
 </tr>
 <?php
 	require_once '../connect.php';
-	$query = "select A.*,`TenSP` from `sanpham` inner join (SELECT `idSP`,`ThoiGianDatHang`,`ThoiGianGiaoHang`,`TenKhachHang`,`SoLuong`,`Gia`,SoLuong*Gia as ThanhTien, SUM(SoLuong*Gia) as TongDoanhThu FROM `chitiethoadon` inner join `hoadon` on `chitiethoadon`.`idHoaDon` = `hoadon`.`idHoaDon` where `NamHD`=$nam) as A on `sanpham`.`idSP` = A.`idSP`";
+	$query = "select A.*,`TenSP` from `sanpham` inner join (SELECT `idSP`,`ThoiGianDatHang`,`ThoiGianGiaoHang`,`TenKhachHang`,`SoLuong`,`Gia`,SoLuong*Gia as ThanhTien FROM `chitiethoadon` inner join `hoadon` on `chitiethoadon`.`idHoaDon` = `hoadon`.`idHoaDon` where `NamHD`=$nam) as A on `sanpham`.`idSP` = A.`idSP`";
 
+	$tong = 0;
 	$kq = mysql_query($query);
 	while ($row=mysql_fetch_array($kq))
 	{
@@ -72,12 +73,12 @@ if (isset($_POST['nam']))
 				<td align="center"><?php echo $row['ThanhTien']; ?></td>
 			</tr>
 			<?php
-		
+		$tong += $row['ThanhTien'];
 	}
 ?>
 			<tr>
 				<td align="center" colspan="7"><p style="color:#F00">Tổng doanh thu năm</p></td>
-				<td align="center"><?php echo $row['TongDoanhThu']; ?></td>
+				<td align="center"><?php echo $tong; ?></td>
 			</tr>
 			
 </table>
