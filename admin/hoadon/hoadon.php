@@ -67,11 +67,12 @@ if (isset($_POST['trangthai']))
 </tr>
 <?php
 
-$sl="select * from hoadon inner join tinhtrang on hoadon.idTinhTrang = tinhtrang.idTinhTrang order by ThoiGianDatHang DESC";
+$sl="select * from hoadon inner join tinhtrang on hoadon.idTinhTrang = tinhtrang.idTinhTrang";
 if ($trangthai != -1)
 {
 	$sl .= " where hoadon.idTinhTrang = $trangthai";
 }
+$sl .= " order by ThoiGianDatHang DESC";
 $qr=mysql_query($sl);
 while ($row=mysql_fetch_array($qr))
 {

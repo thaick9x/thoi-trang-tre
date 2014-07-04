@@ -69,6 +69,7 @@ echo "Chào ".$_SESSION['dangnhap']['tendangnhap'];
 				<a href="chungloaisanpham/chungloai.php"><p>Chủng loại Sản Phẩm</p></a>
 				<a href="/thoi-trang-tre/admin/loaisanpham/loaisanpham.php"><p>Loại Sản Phẩm</p></a>
 				<a href="/thoi-trang-tre/admin/sanpham/sanpham.php"><p>Sản Phẩm</p></a>
+				<a href="/thoi-trang-tre/admin/nhacungcap/nhacungcap.php"><p>Nhà Cung Cấp</p></a>
 				<a href="/thoi-trang-tre/admin/user/users.php"><p>Users</p></a>
 				<a href="/thoi-trang-tre/admin/hoadon/hoadon.php"><p>Hóa Đơn</p></a>
 			</td>
