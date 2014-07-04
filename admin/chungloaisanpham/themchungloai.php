@@ -21,8 +21,8 @@
     </select></td>
   </tr>
   <tr>
-    <td><input type="submit" name="them" id="them" value="Thêm" /></td>
-    <td><button onclick="goBack()">Hủy</button></td>
+    <td><input type="submit" name="them" id="them" value="Thêm" /></td>	
+    <td><input type="button" value="Hủy" onclick="location.href = '/thoi-trang-tre/admin/chungloaisanpham/chungloai.php'"></td>
   </tr>
 </table>
 </form>
