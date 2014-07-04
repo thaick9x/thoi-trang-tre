@@ -13,6 +13,6 @@ if (mysql_query($sl))
 }
 else 
 {
-	echo "Xóa Chủng Loại Sản Phẩm thất bại";
+	echo "Sửa Chủng Loại Sản Phẩm thất bại";
 }
 ?>

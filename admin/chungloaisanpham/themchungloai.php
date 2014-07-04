@@ -7,7 +7,7 @@
 
 <body>
 <p align="center" style="color:#06F; font-size:24px;"><b>Trang Quản Trị Thêm Chủng Loại Sản Phẩm</b></p>
-<form name="form1" id="form1" method="post" action="http://localhost/thoi-trang-tre/admin/chungloaisanpham/xuly_them.php">
+<form name="form1" id="form1" method="post" action="/thoi-trang-tre/admin/chungloaisanpham/xuly_them.php">
 <table width="500" border="1" cellspacing="1" cellpadding="1" align="center">
   <tr>
     <td width="200">Tên chủng loại sản phẩm :</td>

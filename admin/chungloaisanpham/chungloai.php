@@ -12,7 +12,7 @@
     <td align="center">ID chủng loại</td>
     <td align="center">Tên chủng loại sản phẩm</td>
     <td align="center">Ẩn hiện</td>
-    <td align="center"><a href="http://localhost/thoi-trang-tre/admin/chungloaisanpham/themchungloai.php">Thêm</a></td>
+    <td align="center"><a href="/thoi-trang-tre/admin/chungloaisanpham/themchungloai.php">Thêm</a></td>
   </tr>
   <?php
     //put your code here
@@ -33,7 +33,7 @@
 		<td align="center"><?php echo $cl['idCL']; ?></td>
 		<td><?php echo $cl['TenCL']; ?></td>
 		<td align="center"><?php if ($cl['AnHien']==0) echo "Ẩn"; if ($cl['AnHien']==1) echo "Hiện"; ?></td>
-		<td align="center"><a href="http://localhost/thoi-trang-tre/admin/chungloaisanpham/xuly_xoa.php?idCL=<?php echo $cl['idCL']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="http://localhost/thoi-trang-tre/admin/chungloaisanpham/suachungloai.php?idCL=<?php echo $cl['idCL']; ?>">Sửa</a></td>
+		<td align="center"><a href="/thoi-trang-tre/admin/chungloaisanpham/xuly_xoa.php?idCL=<?php echo $cl['idCL']; ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không ???????');">Xóa</a> -- <a href="/thoi-trang-tre/admin/chungloaisanpham/suachungloai.php?idCL=<?php echo $cl['idCL']; ?>">Sửa</a></td>
 	  </tr>
 	  <?php
 	}

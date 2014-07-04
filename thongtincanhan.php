@@ -399,17 +399,11 @@ function kiemtradangky(an1,an2,an3,an4,an5,an6,an7,an8)
     <tr>
     	<td>Mã Số Hóa Đơn</td>
         <td>Thời Gian Đặt Hàng</td>
-        <td>Tên Khách Hàng</td>
-        <td>Số CMND</td>
-        <td>Số Điện Thoại</td>
-        <td>Địa Chỉ</td>
-        <td>Quận Huyện</td>
-        <td>Tên Sản Phẩm</td>
-        <td>Số Lượng</td>
-        <td>Giá</td>
+        <td>Thời Gian Giao Hàng</td>
+        <td>Tình Trạng</td>
     </tr>
 <?php
-$sllsms="select * from hoadon, chitiethoadon where hoadon.idUser='".$idUser."' and hoadon.idHoaDon=chitiethoadon.idHoaDon";
+$sllsms="SELECT * FROM hoadon INNER JOIN tinhtrang ON hoadon.idTinhTrang = tinhtrang.idTinhTrang WHERE hoadon.idUser=".$idUser;
 $qrlsms=mysql_query($sllsms);
 while ($rowlsms=mysql_fetch_array($qrlsms))
 {
@@ -418,11 +412,9 @@ while ($rowlsms=mysql_fetch_array($qrlsms))
 	<tr>
     	<td><?php echo $rowlsms['idHoaDon']; ?></td>
         <td><?php echo $rowlsms['ThoiGianDatHang'];?></td>
-        <td><?php echo $rowlsms['TenKhachHang'];?></td>
-        <td><?php echo $rowlsms['SoCMND'];?></td>
-        <td><?php echo $rowlsms['SoDT'];?></td>
-        <td><?php echo $rowlsms['DiaChi'];?></td>
-        <td><?php echo $rowlsms['TenQuanHuyen'];?></td>
+        <td><?php echo $rowlsms['ThoiGianGiaoHang'];?></td>
+        <td><?php echo $rowlsms['TinhTrang'];?></td>
+        
         <td><?php
 				$sldc="select * from sanpham where idSP=".$rowlsms['idSP'];
 				$qrdc=mysql_query($sldc);

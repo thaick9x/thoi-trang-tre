@@ -13,7 +13,7 @@ require_once "../../connect.php";
 		$idCL=$_GET['idCL'];
 		$sl1="delete from chungloaisanpham where idCL=$idCL";
 		$sl2="delete from loaisanpham where idCL='$idCL'";
-		$sl3="delete from sanpham where idCL='$idCL'";
+		$sl3="delete from sanpham where idLoai in (select idLoai from loaisanpham where idCL='$idCL')";
 	if (mysql_query($sl1) && mysql_query($sl2) && mysql_query($sl3))
 	{
 		header ("location:chungloai.php");

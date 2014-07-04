@@ -16,7 +16,7 @@ require_once '../../connect.php';
 $sl="insert into chungloaisanpham (`TenCL`,`AnHien`) value ('".$_POST['tenchungloai']."','".$_POST['anhien']."')";
 if (mysql_query($sl))
 {
-	header ("location:http://localhost/thoi-trang-tre/admin/chungloaisanpham/chungloai.php");
+	header ("location:/thoi-trang-tre/admin/chungloaisanpham/chungloai.php");
 }
 else
 	echo "Thêm Chủng Loại Sản Phẩm thất bại";
