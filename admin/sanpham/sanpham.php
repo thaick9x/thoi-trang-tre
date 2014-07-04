@@ -13,6 +13,7 @@
     <td align="center">Tên chủng loại Sản Phẩm</td>
     <td align="center">Tên loại Sản Phẩm</td>
     <td align="center">Tên Sản Phẩm</td>
+	<td align="center">Nhà Cung Cấp</td>
     <td align="center">Ngày Cập Nhật</td>
     <td align="center">Giá</td>
     <td align="center">Hình</td>
@@ -48,7 +49,7 @@
   <tr>
     <td align="center"><?php echo $rowdc['idSP']; ?></td>
     <td><?php 
-				$slcl="select * from chungloaisanpham where idCL=".$rowdc['idCL'];
+				$slcl="select TenCL from chungloaisanpham INNER JOIN loaisanpham ON chungloaisanpham.idCL = loaisanpham.idCL where loaisanpham.idLoai=".$rowdc['idLoai'];
 				$qrcl=mysql_query($slcl);
 				if ($rowcl=mysql_fetch_array($qrcl))
 				echo $rowcl['TenCL'];
@@ -60,6 +61,16 @@
 				echo $rowl['TenLoai'];
 		?></td>
     <td><?php echo $rowdc['TenSP']; ?></td>
+	<td>
+	<?php 
+	$query = "SELECT TenNCC FROM nhacungcap WHERE idNCC = ".$rowdc['idNCC'];
+	$kq = mysql_query($query);
+	if ($row = mysql_fetch_array($kq))
+		echo $row['TenNCC']; 
+	
+	?>
+	
+	</td>
     <td align="center"><?php echo $rowdc['NgayCapNhat']; ?></td>
     <td align="center"><?php echo $rowdc['Gia']; ?></td>
     <td align="center"><img src="images/<?php echo $rowdc['UrlHinh']; ?>" width="50" height="60" /></td>
