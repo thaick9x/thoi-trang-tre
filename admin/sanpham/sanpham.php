@@ -23,7 +23,7 @@
     <td align="center"><a href="/thoi-trang-tre/admin/sanpham/themsanpham.php">Thêm</a></td>
   </tr>
   <?php
-  require_once 'connect.php';
+  require_once '../../connect.php';
   $sldc="select * from sanpham";
   $qrdc= mysql_query($sldc);
   $tsdong=mysql_num_rows($qrdc);
