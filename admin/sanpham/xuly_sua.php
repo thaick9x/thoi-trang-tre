@@ -11,7 +11,7 @@ if (isset ($_POST['idSP']))
 {
 	$idSP=$_POST['idSP'];
 	include ("../../connect.php");
-	$sl="update sanpham set idCL = '".$_POST['chungloai']."',idLoai = '".$_POST['loai']."', TenSP='".$_POST['tensanpham']."',MoTa ='".$_POST['mota']."',Gia='".$_POST['gia']."', AnHien='".$_POST['anhien']."'";
+	$sl="update sanpham set idLoai = '".$_POST['loai']."', TenSP='".$_POST['tensanpham']."', idNCC='".$_POST['ncc']."',MoTa ='".$_POST['mota']."',Gia='".$_POST['gia']."', AnHien='".$_POST['anhien']."'";
 	if (($urlhinh = $_FILES['hinhanh']['name']) !== '')
 	{
 		$sl .= ",UrlHinh ='".$_FILES['hinhanh']['name']."'";
