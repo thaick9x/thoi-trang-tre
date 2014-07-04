@@ -87,6 +87,7 @@ echo "Chào ".$_SESSION['dangnhap']['tendangnhap'];
 		<tr>
 			
 			<td><input type="button" value="Về trang chủ" onclick="location.href = '/thoi-trang-tre'" /></td>
+			<td><input type="button" value="Đăng xuất" onclick="location.href = 'logout.php'" /></td>
 		</tr>
 	</table>
 
