@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td><input type="submit" name="them" id="them" value="Thêm" /></td>
-      <td><button onclick="goBack()">Hủy</button></td>
+      <td><a href="loaisanpham.php"><input type="button" name="xoa" id="xoa" value="Hủy" /></a></td>
     </tr>
   </table>
 
